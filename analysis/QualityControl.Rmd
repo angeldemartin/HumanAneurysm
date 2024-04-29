@@ -1,0 +1,260 @@
+---
+title: "QualityControl"
+author: "A.DeMartin"
+date: "2024-03-19"
+output: 
+  html_document:
+    keep_md: true
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(width = 100)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, dev = c("png", "pdf"))
+seed <- 1234
+```
+
+## load packages
+```{r load packages, warning=FALSE, include=FALSE}
+library(ExploreSCdataSeurat3)
+library(runSeurat3)
+library(Seurat)
+library(ggpubr)
+library(pheatmap)
+library(SingleCellExperiment)
+library(dplyr)
+library(tidyverse)
+library(viridis)
+library(muscat)
+library(circlize)
+library(destiny)
+library(scater)
+library(metap)
+library(multtest)
+library(clusterProfiler)
+library(org.Hs.eg.db)
+library(msigdbr)
+library(enrichplot)
+library(DOSE)
+library(grid)
+library(gridExtra)
+library(ggupset)
+library(VennDiagram)
+library(NCmisc)
+```
+
+
+QualityControl&ReadCounts
+```{r}
+##total is the sum of all counts while, detected means the number of different genes found
+##(e.g. if gene A=3, gene B=4, gene C = 0: total = 7 and detected = 2)
+
+##plot histograms for individual samples March 2024
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataMarch2024/344261_07-7_20240219_Hu_nucseq_control_01_seurat.rds"
+seurat_control_01 <- readRDS(fileNam)
+table(seurat_control_01$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_control_01)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataMarch2024/344261_08-8_20240219_Hu_nucseq_UIA_04_seurat.rds"
+seurat_UIA_04 <- readRDS(fileNam)
+table(seurat_UIA_04$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_04)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataMarch2024/344261_09-9_20240219_Hu_nucseq_UIA_07_seurat.rds"
+seurat_UIA_07 <- readRDS(fileNam)
+table(seurat_UIA_07$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_07)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p) + scale
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##plot histograms for individual samples April 2024
+##load seurat file
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1_seurat.rds"
+seurat_tArm_ctrl_1 <- readRDS(fileNam)
+table(seurat_tArm_ctrl_1$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_tArm_ctrl_1)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2_seurat.rds"
+seurat_tArm_ctrl_2 <- readRDS(fileNam)
+table(seurat_tArm_ctrl_2$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_tArm_ctrl_2)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_4-9_20240326_Hu_nucseq_UIA_001_seurat.rds"
+seurat_UIA_001 <- readRDS(fileNam)
+table(seurat_UIA_001$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_001)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_5-10_20240326_Hu_nucseq_UIA_003_seurat.rds"
+seurat_UIA_003 <- readRDS(fileNam)
+table(seurat_UIA_003$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_003)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_6-11_20240326_Hu_nucseq_UIA_005_seurat.rds"
+seurat_UIA_005 <- readRDS(fileNam)
+table(seurat_UIA_005$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_005)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_7-12_20240326_Hu_nucseq_UIA_012_seurat.rds"
+seurat_UIA_012 <- readRDS(fileNam)
+table(seurat_UIA_012$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_012)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##load seurat file 
+fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/348751_8-13_20240326_Hu_nucseq_UIA_002_seurat.rds"
+seurat_UIA_002 <- readRDS(fileNam)
+table(seurat_UIA_002$dataset)
+
+##plot histogram with counts
+sce <- as.SingleCellExperiment(seurat_UIA_012)
+
+plotQC5 <- function(sce, feature){
+  p <- gghistogram(data = as.data.frame(sce@colData),
+              x=feature,
+              bins=100,
+              #title=unique(sce$dataset),
+              fill = "#BE3144",
+              legend = "right", color= "black")
+  return(p)
+}
+plotQC5(sce, "total")
+plotQC5(sce, "detected")
+
+##UIA_003, UIA_005, UIA_012 and UIA_002 will be excluded from further analysis
+```
+
+## session info
+```{r date and session info}
+date()
+sessionInfo()
+```
