@@ -15,7 +15,7 @@
 
 <title>HumanAneurysm</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -382,7 +382,7 @@ aria-hidden="true"></span> </a>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2024-04-29
+<strong>Last updated:</strong> 2024-07-15
 </p>
 <p>
 <strong>Checks:</strong> <span
@@ -420,10 +420,10 @@ changes </a>
 <div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
 <code>wflow_publish</code> to commit the R Markdown file and build the
 HTML.</p>
 </div>
@@ -536,10 +536,18 @@ data/AneurysmDataMarch2024
 </tr>
 <tr>
 <td style="text-align:left;">
-/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024//
+/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/
 </td>
 <td style="text-align:left;">
 data/AneurysmDataApril2024
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataJuly2024/
+</td>
+<td style="text-align:left;">
+data/AneurysmDataJuly2024
 </td>
 </tr>
 <tr>
@@ -550,6 +558,22 @@ data/AneurysmDataApril2024
 data/Aneuryms_allmerged_seurat.rds
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenes
+</td>
+<td style="text-align:left;">
+analysis/markerGenes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenesintpat
+</td>
+<td style="text-align:left;">
+analysis/markerGenesintpat
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -558,13 +582,15 @@ data/Aneuryms_allmerged_seurat.rds
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong8e1e9dc">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinHumanAneurysmtreeaaa25e10b717e98c7105ba9ec81f25bbc80e3f67targetblankaaa25e1a">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 8e1e9dc
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/angeldemartin/HumanAneurysm/tree/aaa25e10b717e98c7105ba9ec81f25bbc80e3f67" target="_blank">aaa25e1</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong8e1e9dc"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinHumanAneurysmtreeaaa25e10b717e98c7105ba9ec81f25bbc80e3f67targetblankaaa25e1a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -573,7 +599,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 8e1e9dc.
+The results in this page were generated with repository version
+<a href="https://github.com/angeldemartin/HumanAneurysm/tree/aaa25e10b717e98c7105ba9ec81f25bbc80e3f67" target="_blank">aaa25e1</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -592,16 +619,19 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
     Ignored:    analysis/.Rhistory
-    Ignored:    analysis/figure/
-    Ignored:    data/.DS_Store
+    Ignored:    data/AneurysmDataApril2024/
+    Ignored:    data/AneurysmDataJuly2024/
+    Ignored:    data/AneurysmDataMarch2024/
 
 Untracked files:
-    Untracked:  analysis/HumanAneurysm.Rmd
-    Untracked:  analysis/QualityControl.Rmd
-    Untracked:  data/Aneuryms_allmerged_seurat.rds
-    Untracked:  data/AneurysmDataApril2024/
-    Untracked:  data/AneurysmDataMarch2024/
-    Untracked:  data/excluded samples/
+    Untracked:  analysis/QCindividual.Rmd
+    Untracked:  analysis/markerGenes
+    Untracked:  analysis/markerGenesintpat
+
+Unstaged changes:
+    Modified:   analysis/HumanAneurysm.Rmd
+    Deleted:    analysis/QualityControl.Rmd
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
@@ -616,10 +646,74 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/HumanAneurysm.Rmd</code>) and
+HTML (<code>docs/HumanAneurysm.html</code>) files. If you’ve configured
+a remote Git repository (see <code>?wflow_git_remote</code>), click on
+the hyperlinks in the table below to view the files as they were in that
+past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/angeldemartin/HumanAneurysm/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/HumanAneurysm.html" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+<td>
+update gitignore
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/4ede22322d35e80ff492ca3fdef8e772876854c7/analysis/HumanAneurysm.Rmd" target="_blank">4ede223</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+<td>
+initial commit
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -645,11 +739,18 @@ for(i in 1:length(fileNamList)){
 }
 
 remove(seuratS)
-table(seuratM$dataset)
-table(seuratM$orig.ident)
-
-### load and merge all 
-basedir &lt;- &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024//&quot;
+table(seuratM$dataset)</code></pre>
+<pre><code>
+344261_07-7_20240219_Hu_nucseq_control_01     344261_08-8_20240219_Hu_nucseq_UIA_04 
+                                      598                                       398 
+    344261_09-9_20240219_Hu_nucseq_UIA_07 
+                                     1132 </code></pre>
+<pre class="r"><code>table(seuratM$orig.ident)</code></pre>
+<pre><code>
+     
+2128 </code></pre>
+<pre class="r"><code>### load and merge all 
+basedir &lt;- &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/&quot;
 fileNamList &lt;- list.files(path = basedir)
 
 for(i in 1:length(fileNamList)){
@@ -662,8 +763,189 @@ for(i in 1:length(fileNamList)){
 }
 
 remove(seuratS)
+table(seuratM$dataset)</code></pre>
+<pre><code>
+344261_07-7_20240219_Hu_nucseq_control_01     344261_08-8_20240219_Hu_nucseq_UIA_04 
+                                      598                                       398 
+    344261_09-9_20240219_Hu_nucseq_UIA_07 348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1 
+                                     1132                                      1081 
+348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2     348751_4-9_20240326_Hu_nucseq_UIA_001 
+                                      798                                       351 
+   348751_5-10_20240326_Hu_nucseq_UIA_003    348751_6-11_20240326_Hu_nucseq_UIA_005 
+                                     5107                                     13226 
+   348751_7-12_20240326_Hu_nucseq_UIA_012    348751_8-13_20240326_Hu_nucseq_UIA_002 
+                                     1083                                     23093 </code></pre>
+<pre class="r"><code>table(seuratM$orig.ident)</code></pre>
+<pre><code>
+      
+46867 </code></pre>
+<pre class="r"><code>### load and merge all 
+basedir &lt;- &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataJuly2024/&quot;
+fileNamList &lt;- list.files(path = basedir)
+
+for(i in 1:length(fileNamList)){
+  seuratS &lt;- readRDS(paste0(basedir, fileNamList[i]))
+  if(exists(&quot;seuratM&quot;)){
+    seuratM &lt;- merge(x = seuratM, y = seuratS)
+  }else{
+    seuratM &lt;- seuratS
+  }
+}
+
+remove(seuratS)
+table(seuratM$dataset)</code></pre>
+<pre><code>
+      344261_07-7_20240219_Hu_nucseq_control_01           344261_08-8_20240219_Hu_nucseq_UIA_04 
+                                            598                                             398 
+          344261_09-9_20240219_Hu_nucseq_UIA_07       348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1 
+                                           1132                                            1081 
+      348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2           348751_4-9_20240326_Hu_nucseq_UIA_001 
+                                            798                                             351 
+         348751_5-10_20240326_Hu_nucseq_UIA_003          348751_6-11_20240326_Hu_nucseq_UIA_005 
+                                           5107                                           13226 
+         348751_7-12_20240326_Hu_nucseq_UIA_012          348751_8-13_20240326_Hu_nucseq_UIA_002 
+                                           1083                                           23093 
+353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01          353921_26-26_20240529_Hu_nucseq_STA_LG 
+                                           2270                                            1605 
+    353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03 
+                                            487 </code></pre>
+<pre class="r"><code>table(seuratM$orig.ident)</code></pre>
+<pre><code>
+      
+51229 </code></pre>
+</div>
+<div id="add-metadata" class="section level2">
+<h2>add metadata</h2>
+<pre class="r"><code>### add any type of metadata
+### patient
+control_01 &lt;- c(&quot;344261_07-7_20240219_Hu_nucseq_control_01&quot;)
+UIA_04 &lt;- c(&quot;344261_08-8_20240219_Hu_nucseq_UIA_04&quot;)
+UIA_07 &lt;- c(&quot;344261_09-9_20240219_Hu_nucseq_UIA_07&quot;)
+tArm_ctrl_1 &lt;- c(&quot;348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1&quot;)
+tArm_ctrl_2 &lt;- c(&quot;348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2&quot;)
+UIA_001 &lt;- c(&quot;348751_4-9_20240326_Hu_nucseq_UIA_001&quot;)
+UIA_3 &lt;- c(&quot;348751_5-10_20240326_Hu_nucseq_UIA_003&quot;)
+UIA_5 &lt;- c(&quot;348751_6-11_20240326_Hu_nucseq_UIA_005&quot;)
+UIA_012 &lt;- c(&quot;348751_7-12_20240326_Hu_nucseq_UIA_012&quot;)
+UIA_002 &lt;- c(&quot;348751_8-13_20240326_Hu_nucseq_UIA_002&quot;)
+Cadaver_ctrl_01 &lt;- c(&quot;353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01&quot;)
+STA_LG &lt;- c(&quot;353921_26-26_20240529_Hu_nucseq_STA_LG&quot;)
+Ocp_ctrl_03 &lt;- c(&quot;353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03&quot;)
+
+seuratM$patient &lt;- &quot;pat_nr&quot;
+seuratM$patient[which(seuratM$dataset %in% control_01)] &lt;- &quot;control_01&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_04)] &lt;- &quot;UIA_04&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_07)] &lt;- &quot;UIA_07&quot;
+seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_1)] &lt;- &quot;tArm_ctrl_1&quot;
+seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_2)] &lt;- &quot;tArm_ctrl_2&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_001)] &lt;- &quot;UIA_001&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_3)] &lt;- &quot;UIA_3&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_5)] &lt;- &quot;UIA_5&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_012)] &lt;- &quot;UIA_012&quot;
+seuratM$patient[which(seuratM$dataset %in% UIA_002)] &lt;- &quot;UIA_002&quot;
+seuratM$patient[which(seuratM$dataset %in% Cadaver_ctrl_01)] &lt;- &quot;Cadaver_ctrl_01&quot;
+seuratM$patient[which(seuratM$dataset %in% STA_LG)] &lt;- &quot;STA_LG&quot;
+seuratM$patient[which(seuratM$dataset %in% Ocp_ctrl_03)] &lt;- &quot;Ocp_ctrl_03&quot;
+table(seuratM$patient)</code></pre>
+<pre><code>
+Cadaver_ctrl_01      control_01     Ocp_ctrl_03          STA_LG     tArm_ctrl_1     tArm_ctrl_2 
+           2270             598             487            1605            1081             798 
+        UIA_001         UIA_002         UIA_012          UIA_04          UIA_07           UIA_3 
+            351           23093            1083             398            1132            5107 
+          UIA_5 
+          13226 </code></pre>
+<pre class="r"><code>### batch
+batchMarch24 &lt;- c(&quot;344261_07-7_20240219_Hu_nucseq_control_01&quot;,&quot;344261_08-8_20240219_Hu_nucseq_UIA_04&quot;,&quot;344261_09-9_20240219_Hu_nucseq_UIA_07&quot;)
+batchApril24 &lt;- c(&quot;348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1&quot;,&quot;348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2&quot;,&quot;348751_4-9_20240326_Hu_nucseq_UIA_001&quot;, &quot;348751_5-10_20240326_Hu_nucseq_UIA_003&quot;, &quot;348751_6-11_20240326_Hu_nucseq_UIA_005&quot;, &quot;348751_7-12_20240326_Hu_nucseq_UIA_012&quot;, &quot;348751_8-13_20240326_Hu_nucseq_UIA_002&quot;)
+batchJuly24 &lt;- c(&quot;353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01&quot;,&quot;353921_26-26_20240529_Hu_nucseq_STA_LG&quot;,&quot;353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03&quot;)
+
+seuratM$batch &lt;- &quot;batch&quot;
+seuratM$batch[which(seuratM$dataset %in% batchMarch24)] &lt;- &quot;batchMarch24&quot;
+seuratM$batch[which(seuratM$dataset %in% batchApril24)] &lt;- &quot;batchApril24&quot;
+seuratM$batch[which(seuratM$dataset %in% batchJuly24)] &lt;- &quot;batchJuly24&quot;
+
+table(seuratM$batch)</code></pre>
+<pre><code>
+batchApril24  batchJuly24 batchMarch24 
+       44739         4362         2128 </code></pre>
+<p>##set color vectors</p>
+<pre class="r"><code>col &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;,&quot;#727077&quot;,&quot;#355C7D&quot;,&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;,&quot;#B45B5C&quot;)
+names(col) &lt;- c(&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;)
+
+#get colors
+#brewer.pal(n= 10, name = &quot;Spectral&quot;)
+#&quot;#9E0142&quot; &quot;#D53E4F&quot; &quot;#F46D43&quot; &quot;#FDAE61&quot; &quot;#FEE08B&quot; &quot;#E6F598&quot; &quot;#ABDDA4&quot; &quot;#66C2A5&quot; &quot;#3288BD&quot; &quot;#5E4FA2&quot;
+#brewer.pal(n= 10, name = &quot;Accent&quot;)
+#&quot;#7FC97F&quot; &quot;#BEAED4&quot; &quot;#FDC086&quot; &quot;#FFFF99&quot; &quot;#386CB0&quot; &quot;#F0027F&quot; &quot;#BF5B17&quot; &quot;#666666&quot;
+
+colpat &lt;- c(&quot;#9E0142&quot;, &quot;#D53E4F&quot;, &quot;#F46D43&quot;, &quot;#FDAE61&quot;, &quot;#FEE08B&quot;, &quot;#E6F598&quot;, &quot;#ABDDA4&quot;, &quot;#66C2A5&quot;, &quot;#3288BD&quot;, &quot;#5E4FA2&quot; ,&quot;#BEAED4&quot; , &quot;#FDC086&quot;, &quot;#727077&quot;)
+names(colpat) &lt;- unique(seuratM$patient)
+
+colbatch &lt;- c(&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;)
+names(colbatch) &lt;- unique(seuratM$batch)</code></pre>
+</div>
+<div id="qc-merged" class="section level2">
+<h2>QC merged</h2>
+<pre class="r"><code>### QC merged
+# Extract meta.data from the Seurat object
+meta.data &lt;- seuratM@meta.data
+# Create the density plot
+ptotalpat &lt;- ggplot(data = meta.data, aes(x = total, color = patient, fill = patient)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colpat) +
+  scale_color_manual(values = colpat) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab(&quot;density&quot;) +
+  geom_vline(xintercept = 100)
+
+pdetectedpat &lt;- ggplot(data = meta.data, aes(x = detected, color = patient, fill = patient)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colpat) +
+  scale_color_manual(values = colpat) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab(&quot;density&quot;) +
+  geom_vline(xintercept = 100)
+
+ptotalbatch &lt;- ggplot(data = meta.data, aes(x = total, color = batch, fill = batch)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colbatch) +
+  scale_color_manual(values = colbatch) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab(&quot;density&quot;) +
+  geom_vline(xintercept = 100)
+
+pdetectedbatch &lt;- ggplot(data = meta.data, aes(x = detected, color = batch, fill = batch)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colbatch) +
+  scale_color_manual(values = colbatch) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab(&quot;density&quot;) +
+  geom_vline(xintercept = 100)
+# Return the plots as a list
+list(ptotalpat, pdetectedpat, ptotalbatch ,pdetectedbatch)</code></pre>
+<pre><code>[[1]]</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/QC%20merged-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[2]]</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/QC%20merged-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[3]]</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/QC%20merged-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[4]]</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/QC%20merged-4.png" width="672" style="display: block; margin: auto;" />
+## filter and rerun seurat</p>
+<pre class="r"><code>##filter for Cadaver_ctr_01, UIA_07, UIA_04, Ocp_ctrl_03, control_01, tArm_ctr_1
+seuratMfil &lt;- subset(seuratM, patient %in% c(&quot;Cadaver_ctrl_01&quot;, &quot;UIA_07&quot;, &quot;UIA_04&quot;, &quot;Ocp_ctrl_03&quot;, &quot;control_01&quot;, &quot;tArm_ctrl_1&quot;))
+table(seuratMfil$dataset)
+
+seuratM &lt;- seuratMfil
+remove(seuratMfil)
 table(seuratM$dataset)
-table(seuratM$orig.ident)
 
 #rerun seurat
 seuratM &lt;- NormalizeData (object = seuratM)
@@ -688,70 +970,126 @@ pre-processing##############################</p>
 <pre class="r"><code>##load merged file 
 fileNam &lt;- &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/Aneuryms_allmerged_seurat.rds&quot;
 seuratM &lt;- readRDS(fileNam)
+
+colpat2 &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;,&quot;#727077&quot;,&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;)
+names(colpat2) &lt;- unique(seuratM$patient)
+
 table(seuratM$dataset)</code></pre>
 <pre><code>
-344261_07-7_20240219_Hu_nucseq_control_01     344261_08-8_20240219_Hu_nucseq_UIA_04 
-                                      598                                       398 
-    344261_09-9_20240219_Hu_nucseq_UIA_07 348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1 
-                                     1132                                      1081 
-348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2     348751_4-9_20240326_Hu_nucseq_UIA_001 
-                                      798                                       351 </code></pre>
+      344261_07-7_20240219_Hu_nucseq_control_01           344261_08-8_20240219_Hu_nucseq_UIA_04 
+                                            598                                             398 
+          344261_09-9_20240219_Hu_nucseq_UIA_07       348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1 
+                                           1132                                            1081 
+353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01     353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03 
+                                           2270                                             487 </code></pre>
 <pre class="r"><code>table(seuratM$RNA_snn_res.0.25)</code></pre>
 <pre><code>
-   0    1    2    3    4    5    6    7 
-1542 1045  619  396  319  203  180   54 </code></pre>
+   0    1    2    3    4    5    6    7    8    9   10   11   12   13 
+1220 1036  967  551  386  313  306  298  287  196  180   96   81   49 </code></pre>
 <pre class="r"><code>table(seuratM$orig.ident)</code></pre>
 <pre><code>
      
-4358 </code></pre>
-<pre class="r"><code>### add any type of metadata
-### patient
-control_01 &lt;- c(&quot;344261_07-7_20240219_Hu_nucseq_control_01&quot;)
-UIA_04 &lt;- c(&quot;344261_08-8_20240219_Hu_nucseq_UIA_04&quot;)
-UIA_07 &lt;- c(&quot;344261_09-9_20240219_Hu_nucseq_UIA_07&quot;)
-tArm_ctrl_1 &lt;- c(&quot;348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1&quot;)
-tArm_ctrl_2 &lt;- c(&quot;348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2&quot;)
-UIA_001 &lt;- c(&quot;348751_4-9_20240326_Hu_nucseq_UIA_001&quot;)
+5966 </code></pre>
+</div>
+<div id="plot-cell-numbers" class="section level2">
+<h2>plot cell numbers</h2>
+<pre class="r"><code>cell_count &lt;- data.frame(table(seuratM$patient))
+colnames(cell_count) &lt;- c(&quot;patient&quot;, &quot;Freq&quot;)
+hsize &lt;- 1.5
 
-seuratM$patient &lt;- &quot;pat_nr&quot;
-seuratM$patient[which(seuratM$dataset %in% control_01)] &lt;- &quot;control_01&quot;
-seuratM$patient[which(seuratM$dataset %in% UIA_04)] &lt;- &quot;UIA_04&quot;
-seuratM$patient[which(seuratM$dataset %in% UIA_07)] &lt;- &quot;UIA_07&quot;
-seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_1)] &lt;- &quot;tArm_ctrl_1&quot;
-seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_2)] &lt;- &quot;tArm_ctrl_2&quot;
-seuratM$patient[which(seuratM$dataset %in% UIA_001)] &lt;- &quot;UIA_001&quot;
-
-table(seuratM$patient)</code></pre>
-<pre><code>
- control_01 tArm_ctrl_1 tArm_ctrl_2     UIA_001      UIA_04      UIA_07 
-        598        1081         798         351         398        1132 </code></pre>
-<pre class="r"><code>### batch
-batch1 &lt;- c(&quot;344261_07-7_20240219_Hu_nucseq_control_01&quot;,&quot;344261_08-8_20240219_Hu_nucseq_UIA_04&quot;,&quot;344261_09-9_20240219_Hu_nucseq_UIA_07&quot;)
-batch2 &lt;- c(&quot;348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1&quot;,&quot;348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2&quot;,&quot;348751_4-9_20240326_Hu_nucseq_UIA_001&quot;)
-
-seuratM$batch &lt;- &quot;batch&quot;
-seuratM$batch[which(seuratM$dataset %in% batch1)] &lt;- &quot;batch1&quot;
-seuratM$batch[which(seuratM$dataset %in% batch2)] &lt;- &quot;batch2&quot;
-
-table(seuratM$batch)</code></pre>
-<pre><code>
-batch1 batch2 
-  2128   2230 </code></pre>
-<p>##set color vectors</p>
-<pre class="r"><code>col &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;,&quot;#727077&quot;,&quot;#355C7D&quot;,&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;,&quot;#B45B5C&quot;)
-names(col) &lt;- unique(seuratM$RNA_snn_res.0.25)
-
-colpat &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;,&quot;#727077&quot;,&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;)
-names(colpat) &lt;- unique(seuratM$patient)</code></pre>
+ggplot(cell_count, aes(x = hsize, y = Freq, fill = patient)) +
+  scale_fill_manual(values = colpat2) +
+  geom_col(color = &quot;white&quot;) +
+  coord_polar(theta = &quot;y&quot;) +
+  xlim(c(0.2, hsize + 0.5)) +
+  theme_void() +
+  ggtitle(&quot;cell number&quot;) +
+  theme(plot.title = element_text(hjust = 0.5, size = 15)) +
+  geom_text(aes(label = Freq), position = position_stack(vjust = 0.5))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/cellnumber%20circle-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="plot-umaps" class="section level2">
 <h2>plot umaps</h2>
 <pre class="r"><code>Idents(seuratM) &lt;- seuratM$RNA_snn_res.0.25
-DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 0.8, cols = col) </code></pre>
+DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 0.8) </code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/umap-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-umap-1">
+Past versions of umap-1.png
+</button>
+</p>
+<div id="fig-umap-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/umap-1.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>Idents(seuratM) &lt;- seuratM$patient
-DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 0.8, cols = colpat) </code></pre>
+DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 0.8, cols = colpat2) </code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/umap-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-umap-2">
+Past versions of umap-2.png
+</button>
+</p>
+<div id="fig-umap-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/umap-2.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="calculate-marker-genes" class="section level2">
 <h2>calculate marker genes</h2>
@@ -759,63 +1097,960 @@ DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 0.8, cols = colpat) </c
 Idents(seuratM) &lt;- seuratM$RNA_snn_res.0.25
 markerGenes &lt;- FindAllMarkers(seuratM, only.pos=T) %&gt;% 
   dplyr::filter(p_val_adj &lt; 0.01)
-
-##DE genes datasets
-Idents(seuratM) &lt;- seuratM$dataset
-levels(seuratM)
-DEgenes &lt;- FindAllMarkers(seuratM, only.pos=T) %&gt;% 
-  dplyr::filter(p_val_adj &lt; 0.01)</code></pre>
+#save table
+write.table(markerGenes, 
+            file= &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenes&quot;,
+            sep=&quot;\t&quot;,
+            quote=F,
+            row.names=F,
+            col.names=T)</code></pre>
 </div>
 <div id="plot-features" class="section level2">
 <h2>plot features</h2>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000133392.MYH11&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000133392.MYH11&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000107796.ACTA2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-1">
+Past versions of "feature plot-1.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-1.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000107796.ACTA2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-2.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000076706.MCAM&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-2">
+Past versions of "feature plot-2.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-2.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000076706.MCAM&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-3.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000105835.NAMPT&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-3">
+Past versions of "feature plot-3.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-3.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000249669.CARMN&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-4.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000077942.FBLN1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-4">
+Past versions of "feature plot-4.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-4.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000168685.IL7R&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-5.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000188257.PLA2G2A&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-5">
+Past versions of "feature plot-5.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-5.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000116824.CD2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-6.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000125740.FOSB&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-6">
+Past versions of "feature plot-6.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-6.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000110848.CD69&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-7.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000170345.FOS&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-7">
+Past versions of "feature plot-7.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-7.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000081237.PTPRC&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-8.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000137801.THBS1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-8">
+Past versions of "feature plot-8.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-8.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000154258.ABCA9&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-9.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000154734.ADAMTS1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-9">
+Past versions of "feature plot-9.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-9.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000159167.STC1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-10.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000123358.NR4A1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-10">
+Past versions of "feature plot-10.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-10.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000196569.LAMA2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-11.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000110799.VWF&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-11">
+Past versions of "feature plot-11.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-11.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000047457.CP&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-12.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000261371.PECAM1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-12">
+Past versions of "feature plot-12.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-12.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000134853.PDGFRA&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-13.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000179915.NRXN1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE) </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-13">
+Past versions of "feature plot-13.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-13.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000081052.COL4A4&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-14.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000130294.KIF1A&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE) </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-14">
+Past versions of "feature plot-14.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-14.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000164530.PI16&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-15.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000196091.MYBPC1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)    </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-15">
+Past versions of "feature plot-15.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-15" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-15.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000000971.CFH&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-16.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000092054.MYH7&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)  </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-16">
+Past versions of "feature plot-16.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-16" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-16.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000177575.CD163&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-17.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000119535.CSF3R&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE) </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-17">
+Past versions of "feature plot-17.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-17" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-17.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000018280.SLC11A1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-18.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000173391.OLR1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-18">
+Past versions of "feature plot-18.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-18" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-18.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000164733.CTSB&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-19.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000211451.GNRHR2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)    </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-19">
+Past versions of "feature plot-19.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-19" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-19.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000010327.STAB1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-20.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000142798.HSPG2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-20">
+Past versions of "feature plot-20.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-20" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-20.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000261371.PECAM1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-21.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000100154.TTC28&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE) </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-21">
+Past versions of "feature plot-21.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-21" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-21.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000172889.EGFL7&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-22.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000168806.LCMT2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-22">
+Past versions of "feature plot-22.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-22" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-22.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000110799.VWF&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-23.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000114861.FOXP1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;), raster = FALSE) </code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-23">
+Past versions of "feature plot-23.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-23" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-23.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000107147.KCNT1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
 <p><img src="figure/HumanAneurysm.Rmd/feature%20plot-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-feature-plot-24">
+Past versions of "feature plot-24.png"
+</button>
+</p>
+<div id="fig-no-spaces-feature-plot-24" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/angeldemartin/HumanAneurysm/blob/d6526d4ac2dc949b6fc2e4608d44487e8541529c/docs/figure/HumanAneurysm.Rmd/feature plot-24.png" target="_blank">d6526d4</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2024-04-29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000168824.NSG1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot-25.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000164188.RANBP3L&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot-26.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM, features = &quot;ENSG00000158296.SLC13A3&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot-27.png" width="672" style="display: block; margin: auto;" />
+######################################## integrate over batches
+########################################################</p>
 </div>
 <div id="integrate-over-batches" class="section level2">
 <h2>integrate over batches</h2>
@@ -847,181 +2082,376 @@ for(i in 1:length(res)){
 }</code></pre>
 <pre><code>Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
 
-Number of nodes: 4358
-Number of edges: 151103
+Number of nodes: 5966
+Number of edges: 205112
 
 Running Louvain algorithm...
-Maximum modularity in 10 random starts: 0.9277
+Maximum modularity in 10 random starts: 0.9205
+Number of communities: 9
+Elapsed time: 0 seconds
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 205112
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.8790
+Number of communities: 14
+Elapsed time: 0 seconds
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 205112
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.8995
 Number of communities: 11
 Elapsed time: 0 seconds
 Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
 
-Number of nodes: 4358
-Number of edges: 151103
+Number of nodes: 5966
+Number of edges: 205112
 
 Running Louvain algorithm...
-Maximum modularity in 10 random starts: 0.8703
-Number of communities: 13
-Elapsed time: 0 seconds
-Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
-
-Number of nodes: 4358
-Number of edges: 151103
-
-Running Louvain algorithm...
-Maximum modularity in 10 random starts: 0.9015
-Number of communities: 12
-Elapsed time: 0 seconds
-Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
-
-Number of nodes: 4358
-Number of edges: 151103
-
-Running Louvain algorithm...
-Maximum modularity in 10 random starts: 0.8494
-Number of communities: 16
+Maximum modularity in 10 random starts: 0.8623
+Number of communities: 14
 Elapsed time: 0 seconds</code></pre>
 <pre class="r"><code>DefaultAssay(object = seuratM.int) &lt;- &quot;RNA&quot;</code></pre>
-<p>##set color vectors</p>
-<pre class="r"><code>colint &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;,&quot;#727077&quot;,&quot;#355C7D&quot;,&quot;#779d8d&quot;,&quot;#dfc27d&quot;,&quot;#f4a582&quot;,&quot;#B45B5C&quot;)
-names(colint) &lt;- unique(seuratM.int$RNA_snn_res.0.25)
-
-colbatch &lt;- c(&quot;#202547&quot;,&quot;#BE3144&quot;)
-names(colbatch) &lt;- unique(seuratM.int$batch)</code></pre>
 </div>
-<div id="visualize-integrated-data" class="section level2">
-<h2>visualize integrated data</h2>
-<pre class="r"><code>Idents(seuratM.int) &lt;- seuratM.int$RNA_snn_res.0.25
-DimPlot(seuratM.int, reduction=&quot;umap&quot;, cols = colint)</code></pre>
-<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="visualize-data-integrated-over-batches" class="section level2">
+<h2>visualize data integrated over batches</h2>
+<pre class="r"><code>Idents(seuratM.int) &lt;- seuratM.int$integrated_snn_res.0.25
+DimPlot(seuratM.int, reduction=&quot;umap&quot;, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20batches-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>Idents(seuratM.int) &lt;- seuratM.int$batch
-DimPlot(seuratM.int, reduction=&quot;umap&quot;, cols = colbatch)</code></pre>
-<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster-2.png" width="672" style="display: block; margin: auto;" /></p>
+DimPlot(seuratM.int, reduction=&quot;umap&quot;, cols = colbatch, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20batches-2.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>Idents(seuratM.int) &lt;- seuratM.int$patient
-DimPlot(seuratM.int, reduction=&quot;umap&quot;, cols = colpat)</code></pre>
-<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster-3.png" width="672" style="display: block; margin: auto;" /></p>
+DimPlot(seuratM.int, reduction=&quot;umap&quot;, cols = colpat2, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20batches-3.png" width="672" style="display: block; margin: auto;" />
+######################################## end integrate over batches
+########################################################</p>
+<div id="integrate-over-patients" class="section level40">
+<p class="heading">integrate over patients</p>
+</div>
+</div>
+<div id="integrate-over-patients-1" class="section level2">
+<h2>integrate over patients</h2>
+<pre class="r"><code>seuratM.list &lt;- SplitObject(object = seuratM, split.by = &quot;patient&quot;)
+for (i in 1:length(x = seuratM.list)) {
+    seuratM.list[[i]] &lt;- NormalizeData(object = seuratM.list[[i]],
+                                      verbose = FALSE)
+    seuratM.list[[i]] &lt;- FindVariableFeatures(object = seuratM.list[[i]], 
+        selection.method = &quot;vst&quot;, nfeatures = 2000, verbose = FALSE)
+}
+
+seuratM.anchors &lt;- FindIntegrationAnchors(object.list = seuratM.list, dims = 1:10,
+                                         k.filter = 200)
+seuratM.intpat &lt;- IntegrateData(anchorset = seuratM.anchors, dims = 1:10)
+DefaultAssay(object = seuratM.intpat) &lt;- &quot;integrated&quot;
+
+# rerun seurat
+seuratM.intpat &lt;- ScaleData(object = seuratM.intpat, verbose = FALSE,
+                        features = rownames(seuratM.intpat))
+seuratM.intpat &lt;- RunPCA(object = seuratM.intpat, npcs = 20, verbose = FALSE)
+#seuratM.int &lt;- RunTSNE(object = seuratM.int, reduction = &quot;pca&quot;, dims = 1:10)
+seuratM.intpat &lt;- RunUMAP(object = seuratM.intpat, reduction = &quot;pca&quot;, dims = 1:10)
+
+seuratM.intpat &lt;- FindNeighbors(object = seuratM.intpat, reduction = &quot;pca&quot;, dims = 1:10)
+res &lt;- c(0.25,0.6,0.4,0.8)
+for(i in 1:length(res)){
+  seuratM.intpat &lt;- FindClusters(object = seuratM.intpat, resolution = res[i],
+                             random.seed = 1234)
+}</code></pre>
+<pre><code>Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 185323
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.8718
+Number of communities: 7
+Elapsed time: 0 seconds
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 185323
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.7975
+Number of communities: 9
+Elapsed time: 0 seconds
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 185323
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.8357
+Number of communities: 8
+Elapsed time: 0 seconds
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 5966
+Number of edges: 185323
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.7669
+Number of communities: 10
+Elapsed time: 0 seconds</code></pre>
+<pre class="r"><code>DefaultAssay(object = seuratM.intpat) &lt;- &quot;RNA&quot;</code></pre>
+</div>
+<div id="visualize-data-integrated-over-patients"
+class="section level2">
+<h2>visualize data integrated over patients</h2>
+<pre class="r"><code>#set color vector
+col &lt;- c(&quot;#727077&quot;,&quot;#BE3144&quot;,&quot;#355C7D&quot;,&quot;#779d8d&quot;,&quot;#f4a582&quot;,&quot;#B45B5C&quot;,&quot;#dfc27d&quot;)
+names(col) &lt;- c(&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;)
+
+Idents(seuratM.intpat) &lt;- seuratM.intpat$integrated_snn_res.0.25
+DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = col, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = col, pt.size = 1) + theme(legend.position = &quot;null&quot;)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>Idents(seuratM.intpat) &lt;- seuratM.intpat$batch
+DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = colbatch, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = colbatch, pt.size = 1) + theme(legend.position = &quot;null&quot;)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>Idents(seuratM.intpat) &lt;- seuratM.intpat$patient
+DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = colpat2, pt.size = 1)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>DimPlot(seuratM.intpat, reduction=&quot;umap&quot;, cols = colpat2, pt.size = 1) + theme(legend.position = &quot;null&quot;)</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/visualize%20int%20cluster%20over%20patients-6.png" width="672" style="display: block; margin: auto;" />
+## calculate marker genes integrated over patients</p>
+<pre class="r"><code>##cluster marker
+Idents(seuratM.intpat) &lt;- seuratM.intpat$integrated_snn_res.0.25
+markerGenes &lt;- FindAllMarkers(seuratM, only.pos=T) %&gt;% 
+  dplyr::filter(p_val_adj &lt; 0.01)
+#save table
+write.table(markerGenes, 
+            file= &quot;/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenesintpat&quot;,
+            sep=&quot;\t&quot;,
+            quote=F,
+            row.names=F,
+            col.names=T)</code></pre>
+</div>
+<div id="plot-features-intpat" class="section level2">
+<h2>plot features intpat</h2>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000133392.MYH11&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000107796.ACTA2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000076706.MCAM&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000249669.CARMN&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000168685.IL7R&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000116824.CD2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000110848.CD69&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000081237.PTPRC&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-8.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000154258.ABCA9&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-9.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000159167.STC1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-10.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000196569.LAMA2&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-11.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000047457.CP&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-12.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000134853.PDGFRA&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-13.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000081052.COL4A4&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-14.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000164530.PI16&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-15.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000000971.CFH&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-16.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000177575.CD163&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-17.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000018280.SLC11A1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-18.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000164733.CTSB&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-19.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000010327.STAB1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-20.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000261371.PECAM1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-21.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000172889.EGFL7&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-22.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000110799.VWF&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-23.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000107147.KCNT1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-24.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000168824.NSG1&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-25.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000164188.RANBP3L&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-26.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>FeaturePlot(seuratM.intpat, features = &quot;ENSG00000158296.SLC13A3&quot;, pt.size = 1, cols = c(&quot;lightgrey&quot;, &quot;#BE3144&quot;))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/feature%20plot%20intpat-27.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="abundance-plots" class="section level2">
+<h2>abundance plots</h2>
+<pre class="r"><code>###dataset
+datList &lt;- NULL
+for(con in unique(seuratM.intpat$dataset)){
+  seuratSub &lt;- subset(seuratM.intpat, dataset==con)
+  print(dim(seuratSub))
+  dat_con &lt;- as.data.frame(table(seuratSub$integrated_snn_res.0.25)) %&gt;%
+  mutate(percent=Freq/ncol(seuratSub)) %&gt;% mutate(dataset=con)
+  datList[[con]] &lt;- dat_con
+}</code></pre>
+<pre><code>[1] 31310   598
+[1] 31310   398
+[1] 31310  1132
+[1] 31310  1081
+[1] 31310  2270
+[1] 31310   487</code></pre>
+<pre class="r"><code>dat_all &lt;- do.call(&quot;rbind&quot;, datList)
+
+## plot abundance
+ggbarplot(dat_all, x= &quot;dataset&quot;, y= &quot;percent&quot;, fill = &quot;Var1&quot;, palette = col, legend = &quot;right&quot;, legend.titel = &quot;cluster&quot;, ylab = &quot;frequency&quot;)  + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))</code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/abundance%20plot-1.png" width="960" style="display: block; margin: auto;" />
+######################################## end integrate over patients
+########################################################</p>
+</div>
+<div id="plot-umap-not-integrated-and-color-by-integrated-clustering"
+class="section level2">
+<h2>plot umap not integrated and color by integrated clustering</h2>
+<pre class="r"><code>Idents(seuratM) &lt;- seuratM.int$integrated_snn_res.0.25
+DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 1) </code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/umap%20colored%20by%20intpat%20clustering-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>Idents(seuratM) &lt;- seuratM.intpat$integrated_snn_res.0.25
+DimPlot(seuratM, reduction = &quot;umap&quot;, pt.size = 1) </code></pre>
+<p><img src="figure/HumanAneurysm.Rmd/umap%20colored%20by%20intpat%20clustering-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="session-info" class="section level2">
 <h2>session info</h2>
 <pre class="r"><code>date()</code></pre>
-<pre><code>[1] &quot;Mon Apr 29 19:27:17 2024&quot;</code></pre>
+<pre><code>[1] &quot;Mon Jul 15 20:03:28 2024&quot;</code></pre>
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.2.3 (2023-03-15)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur ... 10.16
+<pre><code>R version 4.4.0 (2024-04-24)
+Platform: x86_64-apple-darwin20
+Running under: macOS Ventura 13.6.7
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Zurich
+tzcode source: internal
 
 attached base packages:
 [1] grid      stats4    stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] NCmisc_1.2.0                VennDiagram_1.7.3           futile.logger_1.4.3        
- [4] ggupset_0.3.0               gridExtra_2.3               DOSE_3.24.2                
- [7] enrichplot_1.18.4           msigdbr_7.5.1               org.Hs.eg.db_3.16.0        
-[10] AnnotationDbi_1.60.2        clusterProfiler_4.6.2       multtest_2.54.0            
-[13] metap_1.9                   scater_1.26.1               scuttle_1.8.4              
-[16] destiny_3.12.0              circlize_0.4.16             muscat_1.12.1              
-[19] viridis_0.6.5               viridisLite_0.4.2           lubridate_1.9.3            
-[22] forcats_1.0.0               stringr_1.5.1               purrr_1.0.2                
-[25] readr_2.1.5                 tidyr_1.3.1                 tibble_3.2.1               
-[28] tidyverse_2.0.0             dplyr_1.1.4                 SingleCellExperiment_1.20.1
-[31] SummarizedExperiment_1.28.0 Biobase_2.58.0              GenomicRanges_1.50.2       
-[34] GenomeInfoDb_1.34.9         IRanges_2.32.0              S4Vectors_0.36.2           
-[37] BiocGenerics_0.44.0         MatrixGenerics_1.10.0       matrixStats_1.2.0          
-[40] pheatmap_1.0.12             ggpubr_0.6.0                ggplot2_3.5.0              
-[43] Seurat_5.0.1                SeuratObject_5.0.1          sp_2.1-3                   
-[46] runSeurat3_0.1.0            ExploreSCdataSeurat3_0.1.0 
+ [1] RColorBrewer_1.1-3          NCmisc_1.2.0                VennDiagram_1.7.3          
+ [4] futile.logger_1.4.3         ggupset_0.4.0               gridExtra_2.3              
+ [7] DOSE_3.30.1                 enrichplot_1.24.0           msigdbr_7.5.1              
+[10] org.Hs.eg.db_3.19.1         AnnotationDbi_1.66.0        clusterProfiler_4.12.0     
+[13] multtest_2.60.0             metap_1.11                  scater_1.32.0              
+[16] scuttle_1.14.0              destiny_3.18.0              circlize_0.4.16            
+[19] muscat_1.18.0               viridis_0.6.5               viridisLite_0.4.2          
+[22] lubridate_1.9.3             forcats_1.0.0               stringr_1.5.1              
+[25] purrr_1.0.2                 readr_2.1.5                 tidyr_1.3.1                
+[28] tibble_3.2.1                tidyverse_2.0.0             dplyr_1.1.4                
+[31] SingleCellExperiment_1.26.0 SummarizedExperiment_1.34.0 Biobase_2.64.0             
+[34] GenomicRanges_1.56.1        GenomeInfoDb_1.40.1         IRanges_2.38.1             
+[37] S4Vectors_0.42.1            BiocGenerics_0.50.0         MatrixGenerics_1.16.0      
+[40] matrixStats_1.3.0           pheatmap_1.0.12             ggpubr_0.6.0               
+[43] ggplot2_3.5.1               Seurat_5.1.0                SeuratObject_5.0.2         
+[46] sp_2.1-4                    runSeurat3_0.1.0            ExploreSCdataSeurat3_0.1.0 
 
 loaded via a namespace (and not attached):
-  [1] TMB_1.9.10                graphlayouts_1.1.0        pbapply_1.7-2            
-  [4] lattice_0.22-5            vctrs_0.6.5               mgcv_1.9-1               
-  [7] blob_1.2.4                survival_3.5-8            spatstat.data_3.0-4      
- [10] later_1.3.2               nloptr_2.0.3              DBI_1.2.2                
- [13] uwot_0.1.16               zlibbioc_1.44.0           pcaMethods_1.90.0        
- [16] htmlwidgets_1.6.4         mvtnorm_1.2-4             GlobalOptions_0.1.2      
- [19] future_1.33.1             laeken_0.5.3              leiden_0.4.3.1           
- [22] parallel_4.2.3            pbkrtest_0.5.2            irlba_2.3.5.1            
- [25] DEoptimR_1.1-3            tidygraph_1.3.0           Rcpp_1.0.12              
- [28] KernSmooth_2.23-22        promises_1.2.1            DelayedArray_0.24.0      
- [31] limma_3.54.2              RSpectra_0.16-1           fs_1.6.3                 
- [34] fastmatch_1.1-4           mnormt_2.1.1              RhpcBLASctl_0.23-42      
- [37] ranger_0.16.0             digest_0.6.34             png_0.1-8                
- [40] sctransform_0.4.1         scatterpie_0.2.1          cowplot_1.1.3            
- [43] ggraph_2.1.0              pkgconfig_2.0.3           GO.db_3.16.0             
- [46] spatstat.random_3.2-2     DelayedMatrixStats_1.20.0 ggbeeswarm_0.7.2         
- [49] iterators_1.0.14          minqa_1.2.6               reticulate_1.35.0        
- [52] spam_2.10-0               beeswarm_0.4.0            GetoptLong_1.0.5         
- [55] xfun_0.42                 bslib_0.6.1               zoo_1.8-12               
- [58] tidyselect_1.2.0          reshape2_1.4.4            ica_1.0-3                
- [61] gson_0.1.0                rlang_1.1.3               hexbin_1.28.3            
- [64] jquerylib_0.1.4           glue_1.7.0                RColorBrewer_1.1-3       
- [67] variancePartition_1.28.9  lambda.r_1.2.4            ggsignif_0.6.4           
- [70] workflowr_1.7.1           DESeq2_1.38.3             labeling_0.4.3           
- [73] mutoss_0.1-13             httpuv_1.6.14             class_7.3-22             
- [76] BiocNeighbors_1.16.0      TH.data_1.1-2             annotate_1.76.0          
- [79] jsonlite_1.8.8            XVector_0.38.0            bit_4.0.5                
- [82] mime_0.12                 gplots_3.1.3.1            stringi_1.8.3            
- [85] spatstat.sparse_3.0-3     scattermore_1.2           spatstat.explore_3.2-6   
- [88] rbibutils_2.2.16          yulab.utils_0.1.4         bitops_1.0-7             
- [91] cli_3.6.2                 Rdpack_2.6                RSQLite_2.3.5            
- [94] data.table_1.15.0         timechange_0.3.0          rstudioapi_0.15.0        
- [97] git2r_0.33.0              nlme_3.1-164              qvalue_2.30.0            
-[100] locfit_1.5-9.8            listenv_0.9.1             ggthemes_5.1.0           
-[103] miniUI_0.1.1.1            gridGraphics_0.5-1        TTR_0.24.4               
-[106] lifecycle_1.0.4           munsell_0.5.0             caTools_1.18.2           
-[109] codetools_0.2-19          vipor_0.4.7               lmtest_0.9-40            
-[112] xtable_1.8-4              ROCR_1.0-11               formatR_1.14             
-[115] scatterplot3d_0.3-44      abind_1.4-5               farver_2.1.1             
-[118] parallelly_1.37.0         RANN_2.6.1                aplot_0.2.2              
-[121] ggtree_3.6.2              RcppAnnoy_0.0.22          goftest_1.2-3            
-[124] patchwork_1.2.0           futile.options_1.0.1      cluster_2.1.6            
-[127] future.apply_1.11.1       Matrix_1.6-5              tidytree_0.4.6           
-[130] ellipsis_0.3.2            prettyunits_1.2.0         ggridges_0.5.6           
-[133] shinydashboard_0.7.2      igraph_1.6.0              RcppEigen_0.3.3.9.4      
-[136] fgsea_1.24.0              TFisher_0.2.0             lmerTest_3.1-3           
-[139] VIM_6.2.2                 glmmTMB_1.1.8             spatstat.utils_3.0-4     
-[142] htmltools_0.5.7           yaml_2.3.8                utf8_1.2.4               
-[145] plotly_4.10.4             XML_3.99-0.16.1           e1071_1.7-14             
-[148] withr_3.0.0               fitdistrplus_1.1-11       BiocParallel_1.32.6      
-[151] bit64_4.0.5               multcomp_1.4-25           foreach_1.5.2            
-[154] robustbase_0.99-2         Biostrings_2.66.0         progressr_0.14.0         
-[157] GOSemSim_2.24.0           rsvd_1.0.5                ScaledMatrix_1.6.0       
-[160] memoise_2.0.1             evaluate_0.23             geneplotter_1.76.0       
-[163] tzdb_0.4.0                curl_5.2.0                qqconf_1.3.2             
-[166] fansi_1.0.6               fastDummies_1.7.3         highr_0.10               
-[169] xts_0.13.2                tensor_1.5                edgeR_3.40.2             
-[172] aod_1.3.3                 cachem_1.0.8              remaCor_0.0.18           
-[175] deldir_2.0-2              HDO.db_0.99.1             babelgene_22.9           
-[178] rjson_0.2.21              rstatix_0.7.2             ggrepel_0.9.5            
-[181] clue_0.3-65               rprojroot_2.0.4           tools_4.2.3              
-[184] sass_0.4.8                sandwich_3.1-0            magrittr_2.0.3           
-[187] RCurl_1.98-1.14           proxy_0.4-27              car_3.1-2                
-[190] ape_5.7-1                 ggplotify_0.1.2           httr_1.4.7               
-[193] rmarkdown_2.25            boot_1.3-30               globals_0.16.2           
-[196] R6_2.5.1                  nnet_7.3-19               RcppHNSW_0.6.0           
-[199] progress_1.2.3            KEGGREST_1.38.0           treeio_1.22.0            
-[202] gtools_3.9.5              shape_1.4.6.1             beachmat_2.14.2          
-[205] BiocSingular_1.14.0       splines_4.2.3             carData_3.0-5            
-[208] ggfun_0.1.4               colorspace_2.1-0          generics_0.1.3           
-[211] smoother_1.1              pillar_1.9.0              sn_2.1.1                 
-[214] tweenr_2.0.3              ggplot.multistats_1.0.0   GenomeInfoDbData_1.2.9   
-[217] plyr_1.8.9                dotCall64_1.1-1           gtable_0.3.4             
-[220] colourpicker_1.3.0        knitr_1.45                ComplexHeatmap_2.14.0    
-[223] shadowtext_0.1.3          fastmap_1.1.1             EnvStats_2.8.1           
-[226] Cairo_1.6-2               doParallel_1.0.17         vcd_1.4-12               
-[229] broom_1.0.5               scales_1.3.0              backports_1.4.1          
-[232] plotrix_3.8-4             lme4_1.1-35.1             blme_1.0-5               
-[235] hms_1.1.3                 ggforce_0.4.2             Rtsne_0.17               
-[238] shiny_1.8.0               polyclip_1.10-6           numDeriv_2016.8-1.1      
-[241] mathjaxr_1.6-0            lazyeval_0.2.2            crayon_1.5.2             
-[244] MASS_7.3-60.0.1           downloader_0.4            sparseMatrixStats_1.10.0 
-[247] compiler_4.2.3            spatstat.geom_3.2-8      </code></pre>
+  [1] igraph_2.0.3              ica_1.0-3                 plotly_4.10.4            
+  [4] zlibbioc_1.50.0           tidyselect_1.2.1          bit_4.0.5                
+  [7] doParallel_1.0.17         clue_0.3-65               lattice_0.22-6           
+ [10] rjson_0.2.21              blob_1.2.4                S4Arrays_1.4.1           
+ [13] pbkrtest_0.5.3            parallel_4.4.0            png_0.1-8                
+ [16] plotrix_3.8-4             cli_3.6.3                 ggplotify_0.1.2          
+ [19] goftest_1.2-3             VIM_6.2.2                 variancePartition_1.34.0 
+ [22] BiocNeighbors_1.22.0      uwot_0.2.2                shadowtext_0.1.3         
+ [25] curl_5.2.1                mime_0.12                 evaluate_0.24.0          
+ [28] tidytree_0.4.6            leiden_0.4.3.1            ComplexHeatmap_2.20.0    
+ [31] stringi_1.8.4             backports_1.5.0           lmerTest_3.1-3           
+ [34] qqconf_1.3.2              httpuv_1.6.15             magrittr_2.0.3           
+ [37] splines_4.4.0             ggraph_2.2.1              sctransform_0.4.1        
+ [40] ggbeeswarm_0.7.2          DBI_1.2.3                 jquerylib_0.1.4          
+ [43] smoother_1.3              withr_3.0.0               git2r_0.33.0             
+ [46] corpcor_1.6.10            class_7.3-22              rprojroot_2.0.4          
+ [49] lmtest_0.9-40             tidygraph_1.3.1           formatR_1.14             
+ [52] colourpicker_1.3.0        htmlwidgets_1.6.4         fs_1.6.4                 
+ [55] ggrepel_0.9.5             labeling_0.4.3            fANCOVA_0.6-1            
+ [58] SparseArray_1.4.8         DESeq2_1.44.0             ranger_0.16.0            
+ [61] DEoptimR_1.1-3            reticulate_1.38.0         hexbin_1.28.3            
+ [64] zoo_1.8-12                XVector_0.44.0            knitr_1.48               
+ [67] ggplot.multistats_1.0.0   UCSC.utils_1.0.0          RhpcBLASctl_0.23-42      
+ [70] timechange_0.3.0          foreach_1.5.2             fansi_1.0.6              
+ [73] patchwork_1.2.0           caTools_1.18.2            data.table_1.15.4        
+ [76] ggtree_3.12.0             RSpectra_0.16-1           irlba_2.3.5.1            
+ [79] fastDummies_1.7.3         gridGraphics_0.5-1        lazyeval_0.2.2           
+ [82] yaml_2.3.9                survival_3.7-0            scattermore_1.2          
+ [85] crayon_1.5.3              RcppAnnoy_0.0.22          progressr_0.14.0         
+ [88] tweenr_2.0.3              later_1.3.2               ggridges_0.5.6           
+ [91] codetools_0.2-20          GlobalOptions_0.1.2       aod_1.3.3                
+ [94] KEGGREST_1.44.1           Rtsne_0.17                shape_1.4.6.1            
+ [97] limma_3.60.3              pkgconfig_2.0.3           TMB_1.9.14               
+[100] mathjaxr_1.6-0            EnvStats_2.8.1            aplot_0.2.3              
+[103] scatterplot3d_0.3-44      spatstat.sparse_3.1-0     ape_5.8                  
+[106] xtable_1.8-4              car_3.1-2                 highr_0.11               
+[109] plyr_1.8.9                httr_1.4.7                rbibutils_2.2.16         
+[112] tools_4.4.0               globals_0.16.3            beeswarm_0.4.0           
+[115] broom_1.0.6               nlme_3.1-165              lambda.r_1.2.4           
+[118] HDO.db_0.99.1             lme4_1.1-35.5             digest_0.6.36            
+[121] numDeriv_2016.8-1.1       Matrix_1.7-0              farver_2.1.2             
+[124] tzdb_0.4.0                remaCor_0.0.18            reshape2_1.4.4           
+[127] yulab.utils_0.1.4         glue_1.7.0                cachem_1.1.0             
+[130] polyclip_1.10-6           generics_0.1.3            Biostrings_2.72.1        
+[133] mvtnorm_1.2-5             parallelly_1.37.1         mnormt_2.1.1             
+[136] statmod_1.5.0             RcppHNSW_0.6.0            ScaledMatrix_1.12.0      
+[139] carData_3.0-5             minqa_1.2.7               pbapply_1.7-2            
+[142] spam_2.10-0               gson_0.1.0                utf8_1.2.4               
+[145] graphlayouts_1.1.1        gtools_3.9.5              ggsignif_0.6.4           
+[148] RcppEigen_0.3.4.0.0       shiny_1.8.1.1             GenomeInfoDbData_1.2.12  
+[151] glmmTMB_1.1.9             memoise_2.0.1             rmarkdown_2.27           
+[154] scales_1.3.0              future_1.33.2             RANN_2.6.1               
+[157] Cairo_1.6-2               spatstat.data_3.1-2       rstudioapi_0.16.0        
+[160] cluster_2.1.6             whisker_0.4.1             mutoss_0.1-13            
+[163] spatstat.utils_3.0-5      hms_1.1.3                 fitdistrplus_1.1-11      
+[166] munsell_0.5.1             cowplot_1.1.3             colorspace_2.1-0         
+[169] rlang_1.1.4               DelayedMatrixStats_1.26.0 sparseMatrixStats_1.16.0 
+[172] xts_0.14.0                dotCall64_1.1-1           shinydashboard_0.7.2     
+[175] ggforce_0.4.2             laeken_0.5.3              mgcv_1.9-1               
+[178] xfun_0.45                 e1071_1.7-14              TH.data_1.1-2            
+[181] iterators_1.0.14          abind_1.4-5               GOSemSim_2.30.0          
+[184] treeio_1.28.0             futile.options_1.0.1      bitops_1.0-7             
+[187] Rdpack_2.6                promises_1.3.0            scatterpie_0.2.3         
+[190] RSQLite_2.3.7             qvalue_2.36.0             sandwich_3.1-0           
+[193] fgsea_1.30.0              DelayedArray_0.30.1       proxy_0.4-27             
+[196] GO.db_3.19.1              compiler_4.4.0            prettyunits_1.2.0        
+[199] boot_1.3-30               beachmat_2.20.0           listenv_0.9.1            
+[202] Rcpp_1.0.12               edgeR_4.2.0               workflowr_1.7.1          
+[205] BiocSingular_1.20.0       tensor_1.5                MASS_7.3-61              
+[208] progress_1.2.3            BiocParallel_1.38.0       babelgene_22.9           
+[211] spatstat.random_3.2-3     R6_2.5.1                  fastmap_1.2.0            
+[214] multcomp_1.4-25           fastmatch_1.1-4           rstatix_0.7.2            
+[217] vipor_0.4.7               TTR_0.24.4                ROCR_1.0-11              
+[220] TFisher_0.2.0             rsvd_1.0.5                vcd_1.4-12               
+[223] nnet_7.3-19               gtable_0.3.5              KernSmooth_2.23-24       
+[226] miniUI_0.1.1.1            deldir_2.0-4              htmltools_0.5.8.1        
+[229] ggthemes_5.1.0            bit64_4.0.5               spatstat.explore_3.2-7   
+[232] lifecycle_1.0.4           blme_1.0-5                nloptr_2.1.1             
+[235] sass_0.4.9                vctrs_0.6.5               robustbase_0.99-3        
+[238] spatstat.geom_3.2-9       sn_2.1.1                  ggfun_0.1.5              
+[241] future.apply_1.11.2       bslib_0.7.0               pillar_1.9.0             
+[244] gplots_3.1.3.1            pcaMethods_1.96.0         locfit_1.5-9.10          
+[247] jsonlite_1.8.8            GetoptLong_1.0.5         </code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1031,122 +2461,125 @@ Session information
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.2.3 (2023-03-15)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Big Sur ... 10.16
+<pre><code>R version 4.4.0 (2024-04-24)
+Platform: x86_64-apple-darwin20
+Running under: macOS Ventura 13.6.7
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Zurich
+tzcode source: internal
 
 attached base packages:
 [1] grid      stats4    stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] NCmisc_1.2.0                VennDiagram_1.7.3           futile.logger_1.4.3        
- [4] ggupset_0.3.0               gridExtra_2.3               DOSE_3.24.2                
- [7] enrichplot_1.18.4           msigdbr_7.5.1               org.Hs.eg.db_3.16.0        
-[10] AnnotationDbi_1.60.2        clusterProfiler_4.6.2       multtest_2.54.0            
-[13] metap_1.9                   scater_1.26.1               scuttle_1.8.4              
-[16] destiny_3.12.0              circlize_0.4.16             muscat_1.12.1              
-[19] viridis_0.6.5               viridisLite_0.4.2           lubridate_1.9.3            
-[22] forcats_1.0.0               stringr_1.5.1               purrr_1.0.2                
-[25] readr_2.1.5                 tidyr_1.3.1                 tibble_3.2.1               
-[28] tidyverse_2.0.0             dplyr_1.1.4                 SingleCellExperiment_1.20.1
-[31] SummarizedExperiment_1.28.0 Biobase_2.58.0              GenomicRanges_1.50.2       
-[34] GenomeInfoDb_1.34.9         IRanges_2.32.0              S4Vectors_0.36.2           
-[37] BiocGenerics_0.44.0         MatrixGenerics_1.10.0       matrixStats_1.2.0          
-[40] pheatmap_1.0.12             ggpubr_0.6.0                ggplot2_3.5.0              
-[43] Seurat_5.0.1                SeuratObject_5.0.1          sp_2.1-3                   
-[46] runSeurat3_0.1.0            ExploreSCdataSeurat3_0.1.0 
+ [1] RColorBrewer_1.1-3          NCmisc_1.2.0                VennDiagram_1.7.3          
+ [4] futile.logger_1.4.3         ggupset_0.4.0               gridExtra_2.3              
+ [7] DOSE_3.30.1                 enrichplot_1.24.0           msigdbr_7.5.1              
+[10] org.Hs.eg.db_3.19.1         AnnotationDbi_1.66.0        clusterProfiler_4.12.0     
+[13] multtest_2.60.0             metap_1.11                  scater_1.32.0              
+[16] scuttle_1.14.0              destiny_3.18.0              circlize_0.4.16            
+[19] muscat_1.18.0               viridis_0.6.5               viridisLite_0.4.2          
+[22] lubridate_1.9.3             forcats_1.0.0               stringr_1.5.1              
+[25] purrr_1.0.2                 readr_2.1.5                 tidyr_1.3.1                
+[28] tibble_3.2.1                tidyverse_2.0.0             dplyr_1.1.4                
+[31] SingleCellExperiment_1.26.0 SummarizedExperiment_1.34.0 Biobase_2.64.0             
+[34] GenomicRanges_1.56.1        GenomeInfoDb_1.40.1         IRanges_2.38.1             
+[37] S4Vectors_0.42.1            BiocGenerics_0.50.0         MatrixGenerics_1.16.0      
+[40] matrixStats_1.3.0           pheatmap_1.0.12             ggpubr_0.6.0               
+[43] ggplot2_3.5.1               Seurat_5.1.0                SeuratObject_5.0.2         
+[46] sp_2.1-4                    runSeurat3_0.1.0            ExploreSCdataSeurat3_0.1.0 
 
 loaded via a namespace (and not attached):
-  [1] TMB_1.9.10                graphlayouts_1.1.0        pbapply_1.7-2            
-  [4] lattice_0.22-5            vctrs_0.6.5               mgcv_1.9-1               
-  [7] blob_1.2.4                survival_3.5-8            spatstat.data_3.0-4      
- [10] later_1.3.2               nloptr_2.0.3              DBI_1.2.2                
- [13] uwot_0.1.16               zlibbioc_1.44.0           pcaMethods_1.90.0        
- [16] htmlwidgets_1.6.4         mvtnorm_1.2-4             GlobalOptions_0.1.2      
- [19] future_1.33.1             laeken_0.5.3              leiden_0.4.3.1           
- [22] parallel_4.2.3            pbkrtest_0.5.2            irlba_2.3.5.1            
- [25] DEoptimR_1.1-3            tidygraph_1.3.0           Rcpp_1.0.12              
- [28] KernSmooth_2.23-22        promises_1.2.1            DelayedArray_0.24.0      
- [31] limma_3.54.2              RSpectra_0.16-1           fs_1.6.3                 
- [34] fastmatch_1.1-4           mnormt_2.1.1              RhpcBLASctl_0.23-42      
- [37] ranger_0.16.0             digest_0.6.34             png_0.1-8                
- [40] sctransform_0.4.1         scatterpie_0.2.1          cowplot_1.1.3            
- [43] ggraph_2.1.0              pkgconfig_2.0.3           GO.db_3.16.0             
- [46] spatstat.random_3.2-2     DelayedMatrixStats_1.20.0 ggbeeswarm_0.7.2         
- [49] iterators_1.0.14          minqa_1.2.6               reticulate_1.35.0        
- [52] spam_2.10-0               beeswarm_0.4.0            GetoptLong_1.0.5         
- [55] xfun_0.42                 bslib_0.6.1               zoo_1.8-12               
- [58] tidyselect_1.2.0          reshape2_1.4.4            ica_1.0-3                
- [61] gson_0.1.0                rlang_1.1.3               hexbin_1.28.3            
- [64] jquerylib_0.1.4           glue_1.7.0                RColorBrewer_1.1-3       
- [67] variancePartition_1.28.9  lambda.r_1.2.4            ggsignif_0.6.4           
- [70] workflowr_1.7.1           DESeq2_1.38.3             labeling_0.4.3           
- [73] mutoss_0.1-13             httpuv_1.6.14             class_7.3-22             
- [76] BiocNeighbors_1.16.0      TH.data_1.1-2             annotate_1.76.0          
- [79] jsonlite_1.8.8            XVector_0.38.0            bit_4.0.5                
- [82] mime_0.12                 gplots_3.1.3.1            stringi_1.8.3            
- [85] spatstat.sparse_3.0-3     scattermore_1.2           spatstat.explore_3.2-6   
- [88] rbibutils_2.2.16          yulab.utils_0.1.4         bitops_1.0-7             
- [91] cli_3.6.2                 Rdpack_2.6                RSQLite_2.3.5            
- [94] data.table_1.15.0         timechange_0.3.0          rstudioapi_0.15.0        
- [97] git2r_0.33.0              nlme_3.1-164              qvalue_2.30.0            
-[100] locfit_1.5-9.8            listenv_0.9.1             ggthemes_5.1.0           
-[103] miniUI_0.1.1.1            gridGraphics_0.5-1        TTR_0.24.4               
-[106] lifecycle_1.0.4           munsell_0.5.0             caTools_1.18.2           
-[109] codetools_0.2-19          vipor_0.4.7               lmtest_0.9-40            
-[112] xtable_1.8-4              ROCR_1.0-11               formatR_1.14             
-[115] scatterplot3d_0.3-44      abind_1.4-5               farver_2.1.1             
-[118] parallelly_1.37.0         RANN_2.6.1                aplot_0.2.2              
-[121] ggtree_3.6.2              RcppAnnoy_0.0.22          goftest_1.2-3            
-[124] patchwork_1.2.0           futile.options_1.0.1      cluster_2.1.6            
-[127] future.apply_1.11.1       Matrix_1.6-5              tidytree_0.4.6           
-[130] ellipsis_0.3.2            prettyunits_1.2.0         ggridges_0.5.6           
-[133] shinydashboard_0.7.2      igraph_1.6.0              RcppEigen_0.3.3.9.4      
-[136] fgsea_1.24.0              TFisher_0.2.0             lmerTest_3.1-3           
-[139] VIM_6.2.2                 glmmTMB_1.1.8             spatstat.utils_3.0-4     
-[142] htmltools_0.5.7           yaml_2.3.8                utf8_1.2.4               
-[145] plotly_4.10.4             XML_3.99-0.16.1           e1071_1.7-14             
-[148] withr_3.0.0               fitdistrplus_1.1-11       BiocParallel_1.32.6      
-[151] bit64_4.0.5               multcomp_1.4-25           foreach_1.5.2            
-[154] robustbase_0.99-2         Biostrings_2.66.0         progressr_0.14.0         
-[157] GOSemSim_2.24.0           rsvd_1.0.5                ScaledMatrix_1.6.0       
-[160] memoise_2.0.1             evaluate_0.23             geneplotter_1.76.0       
-[163] tzdb_0.4.0                curl_5.2.0                qqconf_1.3.2             
-[166] fansi_1.0.6               fastDummies_1.7.3         highr_0.10               
-[169] xts_0.13.2                tensor_1.5                edgeR_3.40.2             
-[172] aod_1.3.3                 cachem_1.0.8              remaCor_0.0.18           
-[175] deldir_2.0-2              HDO.db_0.99.1             babelgene_22.9           
-[178] rjson_0.2.21              rstatix_0.7.2             ggrepel_0.9.5            
-[181] clue_0.3-65               rprojroot_2.0.4           tools_4.2.3              
-[184] sass_0.4.8                sandwich_3.1-0            magrittr_2.0.3           
-[187] RCurl_1.98-1.14           proxy_0.4-27              car_3.1-2                
-[190] ape_5.7-1                 ggplotify_0.1.2           httr_1.4.7               
-[193] rmarkdown_2.25            boot_1.3-30               globals_0.16.2           
-[196] R6_2.5.1                  nnet_7.3-19               RcppHNSW_0.6.0           
-[199] progress_1.2.3            KEGGREST_1.38.0           treeio_1.22.0            
-[202] gtools_3.9.5              shape_1.4.6.1             beachmat_2.14.2          
-[205] BiocSingular_1.14.0       splines_4.2.3             carData_3.0-5            
-[208] ggfun_0.1.4               colorspace_2.1-0          generics_0.1.3           
-[211] smoother_1.1              pillar_1.9.0              sn_2.1.1                 
-[214] tweenr_2.0.3              ggplot.multistats_1.0.0   GenomeInfoDbData_1.2.9   
-[217] plyr_1.8.9                dotCall64_1.1-1           gtable_0.3.4             
-[220] colourpicker_1.3.0        knitr_1.45                ComplexHeatmap_2.14.0    
-[223] shadowtext_0.1.3          fastmap_1.1.1             EnvStats_2.8.1           
-[226] Cairo_1.6-2               doParallel_1.0.17         vcd_1.4-12               
-[229] broom_1.0.5               scales_1.3.0              backports_1.4.1          
-[232] plotrix_3.8-4             lme4_1.1-35.1             blme_1.0-5               
-[235] hms_1.1.3                 ggforce_0.4.2             Rtsne_0.17               
-[238] shiny_1.8.0               polyclip_1.10-6           numDeriv_2016.8-1.1      
-[241] mathjaxr_1.6-0            lazyeval_0.2.2            crayon_1.5.2             
-[244] MASS_7.3-60.0.1           downloader_0.4            sparseMatrixStats_1.10.0 
-[247] compiler_4.2.3            spatstat.geom_3.2-8      </code></pre>
+  [1] igraph_2.0.3              ica_1.0-3                 plotly_4.10.4            
+  [4] zlibbioc_1.50.0           tidyselect_1.2.1          bit_4.0.5                
+  [7] doParallel_1.0.17         clue_0.3-65               lattice_0.22-6           
+ [10] rjson_0.2.21              blob_1.2.4                S4Arrays_1.4.1           
+ [13] pbkrtest_0.5.3            parallel_4.4.0            png_0.1-8                
+ [16] plotrix_3.8-4             cli_3.6.3                 ggplotify_0.1.2          
+ [19] goftest_1.2-3             VIM_6.2.2                 variancePartition_1.34.0 
+ [22] BiocNeighbors_1.22.0      uwot_0.2.2                shadowtext_0.1.3         
+ [25] curl_5.2.1                mime_0.12                 evaluate_0.24.0          
+ [28] tidytree_0.4.6            leiden_0.4.3.1            ComplexHeatmap_2.20.0    
+ [31] stringi_1.8.4             backports_1.5.0           lmerTest_3.1-3           
+ [34] qqconf_1.3.2              httpuv_1.6.15             magrittr_2.0.3           
+ [37] splines_4.4.0             ggraph_2.2.1              sctransform_0.4.1        
+ [40] ggbeeswarm_0.7.2          DBI_1.2.3                 jquerylib_0.1.4          
+ [43] smoother_1.3              withr_3.0.0               git2r_0.33.0             
+ [46] corpcor_1.6.10            class_7.3-22              rprojroot_2.0.4          
+ [49] lmtest_0.9-40             tidygraph_1.3.1           formatR_1.14             
+ [52] colourpicker_1.3.0        htmlwidgets_1.6.4         fs_1.6.4                 
+ [55] ggrepel_0.9.5             labeling_0.4.3            fANCOVA_0.6-1            
+ [58] SparseArray_1.4.8         DESeq2_1.44.0             ranger_0.16.0            
+ [61] DEoptimR_1.1-3            reticulate_1.38.0         hexbin_1.28.3            
+ [64] zoo_1.8-12                XVector_0.44.0            knitr_1.48               
+ [67] ggplot.multistats_1.0.0   UCSC.utils_1.0.0          RhpcBLASctl_0.23-42      
+ [70] timechange_0.3.0          foreach_1.5.2             fansi_1.0.6              
+ [73] patchwork_1.2.0           caTools_1.18.2            data.table_1.15.4        
+ [76] ggtree_3.12.0             RSpectra_0.16-1           irlba_2.3.5.1            
+ [79] fastDummies_1.7.3         gridGraphics_0.5-1        lazyeval_0.2.2           
+ [82] yaml_2.3.9                survival_3.7-0            scattermore_1.2          
+ [85] crayon_1.5.3              RcppAnnoy_0.0.22          progressr_0.14.0         
+ [88] tweenr_2.0.3              later_1.3.2               ggridges_0.5.6           
+ [91] codetools_0.2-20          GlobalOptions_0.1.2       aod_1.3.3                
+ [94] KEGGREST_1.44.1           Rtsne_0.17                shape_1.4.6.1            
+ [97] limma_3.60.3              pkgconfig_2.0.3           TMB_1.9.14               
+[100] mathjaxr_1.6-0            EnvStats_2.8.1            aplot_0.2.3              
+[103] scatterplot3d_0.3-44      spatstat.sparse_3.1-0     ape_5.8                  
+[106] xtable_1.8-4              car_3.1-2                 highr_0.11               
+[109] plyr_1.8.9                httr_1.4.7                rbibutils_2.2.16         
+[112] tools_4.4.0               globals_0.16.3            beeswarm_0.4.0           
+[115] broom_1.0.6               nlme_3.1-165              lambda.r_1.2.4           
+[118] HDO.db_0.99.1             lme4_1.1-35.5             digest_0.6.36            
+[121] numDeriv_2016.8-1.1       Matrix_1.7-0              farver_2.1.2             
+[124] tzdb_0.4.0                remaCor_0.0.18            reshape2_1.4.4           
+[127] yulab.utils_0.1.4         glue_1.7.0                cachem_1.1.0             
+[130] polyclip_1.10-6           generics_0.1.3            Biostrings_2.72.1        
+[133] mvtnorm_1.2-5             parallelly_1.37.1         mnormt_2.1.1             
+[136] statmod_1.5.0             RcppHNSW_0.6.0            ScaledMatrix_1.12.0      
+[139] carData_3.0-5             minqa_1.2.7               pbapply_1.7-2            
+[142] spam_2.10-0               gson_0.1.0                utf8_1.2.4               
+[145] graphlayouts_1.1.1        gtools_3.9.5              ggsignif_0.6.4           
+[148] RcppEigen_0.3.4.0.0       shiny_1.8.1.1             GenomeInfoDbData_1.2.12  
+[151] glmmTMB_1.1.9             memoise_2.0.1             rmarkdown_2.27           
+[154] scales_1.3.0              future_1.33.2             RANN_2.6.1               
+[157] Cairo_1.6-2               spatstat.data_3.1-2       rstudioapi_0.16.0        
+[160] cluster_2.1.6             whisker_0.4.1             mutoss_0.1-13            
+[163] spatstat.utils_3.0-5      hms_1.1.3                 fitdistrplus_1.1-11      
+[166] munsell_0.5.1             cowplot_1.1.3             colorspace_2.1-0         
+[169] rlang_1.1.4               DelayedMatrixStats_1.26.0 sparseMatrixStats_1.16.0 
+[172] xts_0.14.0                dotCall64_1.1-1           shinydashboard_0.7.2     
+[175] ggforce_0.4.2             laeken_0.5.3              mgcv_1.9-1               
+[178] xfun_0.45                 e1071_1.7-14              TH.data_1.1-2            
+[181] iterators_1.0.14          abind_1.4-5               GOSemSim_2.30.0          
+[184] treeio_1.28.0             futile.options_1.0.1      bitops_1.0-7             
+[187] Rdpack_2.6                promises_1.3.0            scatterpie_0.2.3         
+[190] RSQLite_2.3.7             qvalue_2.36.0             sandwich_3.1-0           
+[193] fgsea_1.30.0              DelayedArray_0.30.1       proxy_0.4-27             
+[196] GO.db_3.19.1              compiler_4.4.0            prettyunits_1.2.0        
+[199] boot_1.3-30               beachmat_2.20.0           listenv_0.9.1            
+[202] Rcpp_1.0.12               edgeR_4.2.0               workflowr_1.7.1          
+[205] BiocSingular_1.20.0       tensor_1.5                MASS_7.3-61              
+[208] progress_1.2.3            BiocParallel_1.38.0       babelgene_22.9           
+[211] spatstat.random_3.2-3     R6_2.5.1                  fastmap_1.2.0            
+[214] multcomp_1.4-25           fastmatch_1.1-4           rstatix_0.7.2            
+[217] vipor_0.4.7               TTR_0.24.4                ROCR_1.0-11              
+[220] TFisher_0.2.0             rsvd_1.0.5                vcd_1.4-12               
+[223] nnet_7.3-19               gtable_0.3.5              KernSmooth_2.23-24       
+[226] miniUI_0.1.1.1            deldir_2.0-4              htmltools_0.5.8.1        
+[229] ggthemes_5.1.0            bit64_4.0.5               spatstat.explore_3.2-7   
+[232] lifecycle_1.0.4           blme_1.0-5                nloptr_2.1.1             
+[235] sass_0.4.9                vctrs_0.6.5               robustbase_0.99-3        
+[238] spatstat.geom_3.2-9       sn_2.1.1                  ggfun_0.1.5              
+[241] future.apply_1.11.2       bslib_0.7.0               pillar_1.9.0             
+[244] gplots_3.1.3.1            pcaMethods_1.96.0         locfit_1.5-9.10          
+[247] jsonlite_1.8.8            GetoptLong_1.0.5         </code></pre>
 </div>
 </div>
 

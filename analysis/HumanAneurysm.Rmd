@@ -7,7 +7,7 @@ output:
     keep_md: true
     toc: true
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -43,12 +43,13 @@ library(gridExtra)
 library(ggupset)
 library(VennDiagram)
 library(NCmisc)
+library(RColorBrewer)
 ```
 
 ##############################start pre-processing##############################
 
 ## load files and merge
-```{r load files, eval=FALSE, include=TRUE}
+```{r load files}
 ### load and merge all 
 basedir <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataMarch2024/"
 fileNamList <- list.files(path = basedir)
@@ -67,7 +68,7 @@ table(seuratM$dataset)
 table(seuratM$orig.ident)
 
 ### load and merge all 
-basedir <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024//"
+basedir <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataApril2024/"
 fileNamList <- list.files(path = basedir)
 
 for(i in 1:length(fileNamList)){
@@ -82,6 +83,143 @@ for(i in 1:length(fileNamList)){
 remove(seuratS)
 table(seuratM$dataset)
 table(seuratM$orig.ident)
+
+### load and merge all 
+basedir <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/AneurysmDataJuly2024/"
+fileNamList <- list.files(path = basedir)
+
+for(i in 1:length(fileNamList)){
+  seuratS <- readRDS(paste0(basedir, fileNamList[i]))
+  if(exists("seuratM")){
+    seuratM <- merge(x = seuratM, y = seuratS)
+  }else{
+    seuratM <- seuratS
+  }
+}
+
+remove(seuratS)
+table(seuratM$dataset)
+table(seuratM$orig.ident)
+```
+
+## add metadata
+```{r add metadata}
+### add any type of metadata
+### patient
+control_01 <- c("344261_07-7_20240219_Hu_nucseq_control_01")
+UIA_04 <- c("344261_08-8_20240219_Hu_nucseq_UIA_04")
+UIA_07 <- c("344261_09-9_20240219_Hu_nucseq_UIA_07")
+tArm_ctrl_1 <- c("348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1")
+tArm_ctrl_2 <- c("348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2")
+UIA_001 <- c("348751_4-9_20240326_Hu_nucseq_UIA_001")
+UIA_3 <- c("348751_5-10_20240326_Hu_nucseq_UIA_003")
+UIA_5 <- c("348751_6-11_20240326_Hu_nucseq_UIA_005")
+UIA_012 <- c("348751_7-12_20240326_Hu_nucseq_UIA_012")
+UIA_002 <- c("348751_8-13_20240326_Hu_nucseq_UIA_002")
+Cadaver_ctrl_01 <- c("353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01")
+STA_LG <- c("353921_26-26_20240529_Hu_nucseq_STA_LG")
+Ocp_ctrl_03 <- c("353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03")
+
+seuratM$patient <- "pat_nr"
+seuratM$patient[which(seuratM$dataset %in% control_01)] <- "control_01"
+seuratM$patient[which(seuratM$dataset %in% UIA_04)] <- "UIA_04"
+seuratM$patient[which(seuratM$dataset %in% UIA_07)] <- "UIA_07"
+seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_1)] <- "tArm_ctrl_1"
+seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_2)] <- "tArm_ctrl_2"
+seuratM$patient[which(seuratM$dataset %in% UIA_001)] <- "UIA_001"
+seuratM$patient[which(seuratM$dataset %in% UIA_3)] <- "UIA_3"
+seuratM$patient[which(seuratM$dataset %in% UIA_5)] <- "UIA_5"
+seuratM$patient[which(seuratM$dataset %in% UIA_012)] <- "UIA_012"
+seuratM$patient[which(seuratM$dataset %in% UIA_002)] <- "UIA_002"
+seuratM$patient[which(seuratM$dataset %in% Cadaver_ctrl_01)] <- "Cadaver_ctrl_01"
+seuratM$patient[which(seuratM$dataset %in% STA_LG)] <- "STA_LG"
+seuratM$patient[which(seuratM$dataset %in% Ocp_ctrl_03)] <- "Ocp_ctrl_03"
+table(seuratM$patient)
+
+### batch
+batchMarch24 <- c("344261_07-7_20240219_Hu_nucseq_control_01","344261_08-8_20240219_Hu_nucseq_UIA_04","344261_09-9_20240219_Hu_nucseq_UIA_07")
+batchApril24 <- c("348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1","348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2","348751_4-9_20240326_Hu_nucseq_UIA_001", "348751_5-10_20240326_Hu_nucseq_UIA_003", "348751_6-11_20240326_Hu_nucseq_UIA_005", "348751_7-12_20240326_Hu_nucseq_UIA_012", "348751_8-13_20240326_Hu_nucseq_UIA_002")
+batchJuly24 <- c("353921_25-25_20240529_Hu_nucseq_Cadaver_ctrl_01","353921_26-26_20240529_Hu_nucseq_STA_LG","353921_27-27_20240522_Hu_nucseq_Ocp_ctrl_03")
+
+seuratM$batch <- "batch"
+seuratM$batch[which(seuratM$dataset %in% batchMarch24)] <- "batchMarch24"
+seuratM$batch[which(seuratM$dataset %in% batchApril24)] <- "batchApril24"
+seuratM$batch[which(seuratM$dataset %in% batchJuly24)] <- "batchJuly24"
+
+table(seuratM$batch)
+```
+
+##set color vectors 
+```{r set color vector}
+col <- c("#202547","#BE3144","#727077","#355C7D","#779d8d","#dfc27d","#f4a582","#B45B5C")
+names(col) <- c("0", "1", "2", "3", "4", "5", "6")
+
+#get colors
+#brewer.pal(n= 10, name = "Spectral")
+#"#9E0142" "#D53E4F" "#F46D43" "#FDAE61" "#FEE08B" "#E6F598" "#ABDDA4" "#66C2A5" "#3288BD" "#5E4FA2"
+#brewer.pal(n= 10, name = "Accent")
+#"#7FC97F" "#BEAED4" "#FDC086" "#FFFF99" "#386CB0" "#F0027F" "#BF5B17" "#666666"
+
+colpat <- c("#9E0142", "#D53E4F", "#F46D43", "#FDAE61", "#FEE08B", "#E6F598", "#ABDDA4", "#66C2A5", "#3288BD", "#5E4FA2" ,"#BEAED4" , "#FDC086", "#727077")
+names(colpat) <- unique(seuratM$patient)
+
+colbatch <- c("#779d8d","#dfc27d","#f4a582")
+names(colbatch) <- unique(seuratM$batch)
+```
+
+## QC merged 
+```{r QC merged}
+### QC merged
+# Extract meta.data from the Seurat object
+meta.data <- seuratM@meta.data
+# Create the density plot
+ptotalpat <- ggplot(data = meta.data, aes(x = total, color = patient, fill = patient)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colpat) +
+  scale_color_manual(values = colpat) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab("density") +
+  geom_vline(xintercept = 100)
+
+pdetectedpat <- ggplot(data = meta.data, aes(x = detected, color = patient, fill = patient)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colpat) +
+  scale_color_manual(values = colpat) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab("density") +
+  geom_vline(xintercept = 100)
+
+ptotalbatch <- ggplot(data = meta.data, aes(x = total, color = batch, fill = batch)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colbatch) +
+  scale_color_manual(values = colbatch) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab("density") +
+  geom_vline(xintercept = 100)
+
+pdetectedbatch <- ggplot(data = meta.data, aes(x = detected, color = batch, fill = batch)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_manual(values = colbatch) +
+  scale_color_manual(values = colbatch) +
+  theme_classic() +
+  scale_x_log10() +
+  ylab("density") +
+  geom_vline(xintercept = 100)
+# Return the plots as a list
+list(ptotalpat, pdetectedpat, ptotalbatch ,pdetectedbatch)
+```
+## filter and rerun seurat
+```{r rerun seurat, eval=FALSE, include=TRUE}
+##filter for Cadaver_ctr_01, UIA_07, UIA_04, Ocp_ctrl_03, control_01, tArm_ctr_1
+seuratMfil <- subset(seuratM, patient %in% c("Cadaver_ctrl_01", "UIA_07", "UIA_04", "Ocp_ctrl_03", "control_01", "tArm_ctrl_1"))
+table(seuratMfil$dataset)
+
+seuratM <- seuratMfil
+remove(seuratMfil)
+table(seuratM$dataset)
 
 #rerun seurat
 seuratM <- NormalizeData (object = seuratM)
@@ -110,58 +248,39 @@ saveRDS(seuratM, file="/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data
 ##load merged file 
 fileNam <- "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/data/Aneuryms_allmerged_seurat.rds"
 seuratM <- readRDS(fileNam)
+
+colpat2 <- c("#202547","#BE3144","#727077","#779d8d","#dfc27d","#f4a582")
+names(colpat2) <- unique(seuratM$patient)
+
 table(seuratM$dataset)
 table(seuratM$RNA_snn_res.0.25)
 table(seuratM$orig.ident)
 ```
 
-```{r add metadata}
-### add any type of metadata
-### patient
-control_01 <- c("344261_07-7_20240219_Hu_nucseq_control_01")
-UIA_04 <- c("344261_08-8_20240219_Hu_nucseq_UIA_04")
-UIA_07 <- c("344261_09-9_20240219_Hu_nucseq_UIA_07")
-tArm_ctrl_1 <- c("348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1")
-tArm_ctrl_2 <- c("348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2")
-UIA_001 <- c("348751_4-9_20240326_Hu_nucseq_UIA_001")
+## plot cell numbers
+```{r cellnumber circle}
+cell_count <- data.frame(table(seuratM$patient))
+colnames(cell_count) <- c("patient", "Freq")
+hsize <- 1.5
 
-seuratM$patient <- "pat_nr"
-seuratM$patient[which(seuratM$dataset %in% control_01)] <- "control_01"
-seuratM$patient[which(seuratM$dataset %in% UIA_04)] <- "UIA_04"
-seuratM$patient[which(seuratM$dataset %in% UIA_07)] <- "UIA_07"
-seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_1)] <- "tArm_ctrl_1"
-seuratM$patient[which(seuratM$dataset %in% tArm_ctrl_2)] <- "tArm_ctrl_2"
-seuratM$patient[which(seuratM$dataset %in% UIA_001)] <- "UIA_001"
-
-table(seuratM$patient)
-
-### batch
-batch1 <- c("344261_07-7_20240219_Hu_nucseq_control_01","344261_08-8_20240219_Hu_nucseq_UIA_04","344261_09-9_20240219_Hu_nucseq_UIA_07")
-batch2 <- c("348751_2-7_20240326_Hu_nucseq_tArm_ctrl_1","348751_3-8_20240326_Hu_nucseq_tArm_ctrl_2","348751_4-9_20240326_Hu_nucseq_UIA_001")
-
-seuratM$batch <- "batch"
-seuratM$batch[which(seuratM$dataset %in% batch1)] <- "batch1"
-seuratM$batch[which(seuratM$dataset %in% batch2)] <- "batch2"
-
-table(seuratM$batch)
-```
-
-##set color vectors 
-```{r set color vector}
-col <- c("#202547","#BE3144","#727077","#355C7D","#779d8d","#dfc27d","#f4a582","#B45B5C")
-names(col) <- unique(seuratM$RNA_snn_res.0.25)
-
-colpat <- c("#202547","#BE3144","#727077","#779d8d","#dfc27d","#f4a582")
-names(colpat) <- unique(seuratM$patient)
+ggplot(cell_count, aes(x = hsize, y = Freq, fill = patient)) +
+  scale_fill_manual(values = colpat2) +
+  geom_col(color = "white") +
+  coord_polar(theta = "y") +
+  xlim(c(0.2, hsize + 0.5)) +
+  theme_void() +
+  ggtitle("cell number") +
+  theme(plot.title = element_text(hjust = 0.5, size = 15)) +
+  geom_text(aes(label = Freq), position = position_stack(vjust = 0.5))
 ```
 
 ## plot umaps
 ```{r umap}
 Idents(seuratM) <- seuratM$RNA_snn_res.0.25
-DimPlot(seuratM, reduction = "umap", pt.size = 0.8, cols = col) 
+DimPlot(seuratM, reduction = "umap", pt.size = 0.8) 
 
 Idents(seuratM) <- seuratM$patient
-DimPlot(seuratM, reduction = "umap", pt.size = 0.8, cols = colpat) 
+DimPlot(seuratM, reduction = "umap", pt.size = 0.8, cols = colpat2) 
 ```
 
 ## calculate marker genes
@@ -170,49 +289,52 @@ DimPlot(seuratM, reduction = "umap", pt.size = 0.8, cols = colpat)
 Idents(seuratM) <- seuratM$RNA_snn_res.0.25
 markerGenes <- FindAllMarkers(seuratM, only.pos=T) %>% 
   dplyr::filter(p_val_adj < 0.01)
-
-##DE genes datasets
-Idents(seuratM) <- seuratM$dataset
-levels(seuratM)
-DEgenes <- FindAllMarkers(seuratM, only.pos=T) %>% 
-  dplyr::filter(p_val_adj < 0.01)
+#save table
+write.table(markerGenes, 
+            file= "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenes",
+            sep="\t",
+            quote=F,
+            row.names=F,
+            col.names=T)
 ```
 
 ## plot features
 ```{r feature plot}
-FeaturePlot(seuratM, features = "ENSG00000133392.MYH11", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000107796.ACTA2", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000076706.MCAM", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
+FeaturePlot(seuratM, features = "ENSG00000133392.MYH11", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000107796.ACTA2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000076706.MCAM", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000249669.CARMN", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM, features = "ENSG00000168685.IL7R", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000116824.CD2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000110848.CD69", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000081237.PTPRC", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM, features = "ENSG00000154258.ABCA9", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000159167.STC1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000196569.LAMA2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000047457.CP", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000134853.PDGFRA", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000081052.COL4A4", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000164530.PI16", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000000971.CFH", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM, features = "ENSG00000177575.CD163", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000018280.SLC11A1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000164733.CTSB", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000010327.STAB1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM, features = "ENSG00000261371.PECAM1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000172889.EGFL7", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000110799.VWF", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM, features = "ENSG00000107147.KCNT1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000168824.NSG1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000164188.RANBP3L", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM, features = "ENSG00000158296.SLC13A3", pt.size = 1, cols = c("lightgrey", "#BE3144"))
 	
-FeaturePlot(seuratM, features = "ENSG00000105835.NAMPT", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000077942.FBLN1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000188257.PLA2G2A", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000125740.FOSB", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000170345.FOS", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-
-FeaturePlot(seuratM, features = "ENSG00000137801.THBS1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000154734.ADAMTS1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000123358.NR4A1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-	
-FeaturePlot(seuratM, features = "ENSG00000110799.VWF", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000261371.PECAM1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-
-FeaturePlot(seuratM, features = "ENSG00000179915.NRXN1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-FeaturePlot(seuratM, features = "ENSG00000130294.KIF1A", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-
-FeaturePlot(seuratM, features = "ENSG00000196091.MYBPC1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-FeaturePlot(seuratM, features = "ENSG00000092054.MYH7", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-
-FeaturePlot(seuratM, features = "ENSG00000119535.CSF3R", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-FeaturePlot(seuratM, features = "ENSG00000173391.OLR1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-
-FeaturePlot(seuratM, features = "ENSG00000211451.GNRHR2", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-FeaturePlot(seuratM, features = "ENSG00000142798.HSPG2", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-
-FeaturePlot(seuratM, features = "ENSG00000100154.TTC28", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
-FeaturePlot(seuratM, features = "ENSG00000168806.LCMT2", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)
-FeaturePlot(seuratM, features = "ENSG00000114861.FOXP1", pt.size = 1, cols = c("lightgrey", "#BE3144"), raster = FALSE)	
 ```
+######################################## integrate over batches ########################################################
 
 ## integrate over batches
 ```{r integrate data}
@@ -246,25 +368,146 @@ for(i in 1:length(res)){
 DefaultAssay(object = seuratM.int) <- "RNA"
 ```
 
-##set color vectors 
-```{r set color vector int}
-colint <- c("#202547","#BE3144","#727077","#355C7D","#779d8d","#dfc27d","#f4a582","#B45B5C")
-names(colint) <- unique(seuratM.int$RNA_snn_res.0.25)
-
-colbatch <- c("#202547","#BE3144")
-names(colbatch) <- unique(seuratM.int$batch)
-```
-
-## visualize integrated data
-```{r visualize int cluster}
-Idents(seuratM.int) <- seuratM.int$RNA_snn_res.0.25
-DimPlot(seuratM.int, reduction="umap", cols = colint)
+## visualize data integrated over batches
+```{r visualize int cluster over batches}
+Idents(seuratM.int) <- seuratM.int$integrated_snn_res.0.25
+DimPlot(seuratM.int, reduction="umap", pt.size = 1)
 
 Idents(seuratM.int) <- seuratM.int$batch
-DimPlot(seuratM.int, reduction="umap", cols = colbatch)
+DimPlot(seuratM.int, reduction="umap", cols = colbatch, pt.size = 1)
 
 Idents(seuratM.int) <- seuratM.int$patient
-DimPlot(seuratM.int, reduction="umap", cols = colpat)
+DimPlot(seuratM.int, reduction="umap", cols = colpat2, pt.size = 1)
+```
+######################################## end integrate over batches ########################################################
+
+######################################## integrate over patients ########################################################
+
+## integrate over patients
+```{r integrate data over patients}
+seuratM.list <- SplitObject(object = seuratM, split.by = "patient")
+for (i in 1:length(x = seuratM.list)) {
+    seuratM.list[[i]] <- NormalizeData(object = seuratM.list[[i]],
+                                      verbose = FALSE)
+    seuratM.list[[i]] <- FindVariableFeatures(object = seuratM.list[[i]], 
+        selection.method = "vst", nfeatures = 2000, verbose = FALSE)
+}
+
+seuratM.anchors <- FindIntegrationAnchors(object.list = seuratM.list, dims = 1:10,
+                                         k.filter = 200)
+seuratM.intpat <- IntegrateData(anchorset = seuratM.anchors, dims = 1:10)
+DefaultAssay(object = seuratM.intpat) <- "integrated"
+
+# rerun seurat
+seuratM.intpat <- ScaleData(object = seuratM.intpat, verbose = FALSE,
+                        features = rownames(seuratM.intpat))
+seuratM.intpat <- RunPCA(object = seuratM.intpat, npcs = 20, verbose = FALSE)
+#seuratM.int <- RunTSNE(object = seuratM.int, reduction = "pca", dims = 1:10)
+seuratM.intpat <- RunUMAP(object = seuratM.intpat, reduction = "pca", dims = 1:10)
+
+seuratM.intpat <- FindNeighbors(object = seuratM.intpat, reduction = "pca", dims = 1:10)
+res <- c(0.25,0.6,0.4,0.8)
+for(i in 1:length(res)){
+  seuratM.intpat <- FindClusters(object = seuratM.intpat, resolution = res[i],
+                             random.seed = 1234)
+}
+DefaultAssay(object = seuratM.intpat) <- "RNA"
+```
+
+## visualize data integrated over patients
+```{r visualize int cluster over patients}
+#set color vector
+col <- c("#727077","#BE3144","#355C7D","#779d8d","#f4a582","#B45B5C","#dfc27d")
+names(col) <- c("0", "1", "2", "3", "4", "5", "6")
+
+Idents(seuratM.intpat) <- seuratM.intpat$integrated_snn_res.0.25
+DimPlot(seuratM.intpat, reduction="umap", cols = col, pt.size = 1)
+DimPlot(seuratM.intpat, reduction="umap", cols = col, pt.size = 1) + theme(legend.position = "null")
+
+Idents(seuratM.intpat) <- seuratM.intpat$batch
+DimPlot(seuratM.intpat, reduction="umap", cols = colbatch, pt.size = 1)
+DimPlot(seuratM.intpat, reduction="umap", cols = colbatch, pt.size = 1) + theme(legend.position = "null")
+
+Idents(seuratM.intpat) <- seuratM.intpat$patient
+DimPlot(seuratM.intpat, reduction="umap", cols = colpat2, pt.size = 1)
+DimPlot(seuratM.intpat, reduction="umap", cols = colpat2, pt.size = 1) + theme(legend.position = "null")
+```
+## calculate marker genes integrated over patients
+```{r marker genes intpat, include=TRUE, eval=FALSE}
+##cluster marker
+Idents(seuratM.intpat) <- seuratM.intpat$integrated_snn_res.0.25
+markerGenes <- FindAllMarkers(seuratM, only.pos=T) %>% 
+  dplyr::filter(p_val_adj < 0.01)
+#save table
+write.table(markerGenes, 
+            file= "/Users/immbio/Desktop/Project/Angelina/HumanAneurysm/analysis/markerGenesintpat",
+            sep="\t",
+            quote=F,
+            row.names=F,
+            col.names=T)
+```
+
+## plot features intpat
+```{r feature plot intpat}
+FeaturePlot(seuratM.intpat, features = "ENSG00000133392.MYH11", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000107796.ACTA2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000076706.MCAM", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000249669.CARMN", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM.intpat, features = "ENSG00000168685.IL7R", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000116824.CD2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000110848.CD69", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000081237.PTPRC", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM.intpat, features = "ENSG00000154258.ABCA9", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000159167.STC1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000196569.LAMA2", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000047457.CP", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000134853.PDGFRA", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000081052.COL4A4", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000164530.PI16", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000000971.CFH", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM.intpat, features = "ENSG00000177575.CD163", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000018280.SLC11A1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000164733.CTSB", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000010327.STAB1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM.intpat, features = "ENSG00000261371.PECAM1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000172889.EGFL7", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000110799.VWF", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+
+FeaturePlot(seuratM.intpat, features = "ENSG00000107147.KCNT1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000168824.NSG1", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000164188.RANBP3L", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+FeaturePlot(seuratM.intpat, features = "ENSG00000158296.SLC13A3", pt.size = 1, cols = c("lightgrey", "#BE3144"))
+```
+
+## abundance plots
+```{r abundance plot, fig.height=8, fig.width=10}
+###dataset
+datList <- NULL
+for(con in unique(seuratM.intpat$dataset)){
+  seuratSub <- subset(seuratM.intpat, dataset==con)
+  print(dim(seuratSub))
+  dat_con <- as.data.frame(table(seuratSub$integrated_snn_res.0.25)) %>%
+  mutate(percent=Freq/ncol(seuratSub)) %>% mutate(dataset=con)
+  datList[[con]] <- dat_con
+}
+dat_all <- do.call("rbind", datList)
+
+## plot abundance
+ggbarplot(dat_all, x= "dataset", y= "percent", fill = "Var1", palette = col, legend = "right", legend.titel = "cluster", ylab = "frequency")  + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+######################################## end integrate over patients ########################################################
+
+## plot umap not integrated and color by integrated clustering
+```{r umap colored by intpat clustering}
+Idents(seuratM) <- seuratM.int$integrated_snn_res.0.25
+DimPlot(seuratM, reduction = "umap", pt.size = 1) 
+
+Idents(seuratM) <- seuratM.intpat$integrated_snn_res.0.25
+DimPlot(seuratM, reduction = "umap", pt.size = 1) 
 ```
 
 ## session info

@@ -10,7 +10,7 @@ editor_options:
 
 ### Quality control. 
 quality control of individual samples
-[link](QualityControl.html)
+[link](QCindividual.html)
 
 ### HumanAneurysm. 
 merge data HumanAneurysm and display umaps and feature plots
