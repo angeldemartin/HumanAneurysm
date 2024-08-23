@@ -8,7 +8,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-### Quality control. 
+### QCindividual. 
 quality control of individual samples
 [link](QCindividual.html)
 
